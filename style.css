@@ -4,9 +4,10 @@ body {
   background-color: #0e0e0e;
   color: #eee;
   scroll-behavior: smooth;
+  line-height: 1.8;
 }
 
-/* اسکرول بار شیک */
+/* اسکرول بار زیبا */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -20,8 +21,8 @@ body {
 
 /* Navbar */
 .navbar {
-  background: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.85);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 .navbar .nav-link {
   color: #fff;
@@ -38,6 +39,10 @@ body {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .hero-section h1 {
   font-size: 60px;
@@ -46,7 +51,7 @@ body {
   font-size: 22px;
 }
 
-/* particles.js زمینه */
+/* Particles.js Background */
 #particles-js {
   position: absolute;
   width: 100%;
@@ -64,28 +69,35 @@ body {
   color: #333;
 }
 
+/* Skills */
+#skills h2 {
+  color: #00c6ff;
+}
+#skills .fa-3x {
+  margin-bottom: 10px;
+}
+#skills p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 /* خدمات */
 #services h2 {
   color: #00c6ff;
 }
-.service-card {
-  background: #1b1b1b;
-  transition: all 0.3s;
+#services .bg-white {
+  background: #fff;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
 }
-.service-card:hover {
+#services .bg-white:hover {
   background: #00c6ff;
   color: #000;
 }
-.service-card i {
-  color: #00c6ff;
-  margin-bottom: 15px;
-}
 
-/* نمونه پروژه‌ها */
-#portfolio h2 {
-  color: #00c6ff;
-}
+/* نمونه پروژه ها */
 .card {
+  border: none;
   transition: 0.4s;
 }
 .card:hover {
@@ -115,11 +127,11 @@ body {
 
 /* فوتر */
 .footer {
-  background: #0a0a0a;
+  background: #000;
   color: #aaa;
 }
 
-/* AOS افکت زیباتر */
+/* افکت‌های AOS */
 [data-aos] {
   transition: all 0.8s ease-in-out;
 }
