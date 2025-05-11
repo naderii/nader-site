@@ -3,171 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>نادر نادری | متخصص شبکه، زیرساخت و DevOps</title>
-
-  <!-- فونت وزیر -->
-  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-  <!-- AOS Animate -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- استایل اختصاصی -->
-  <link rel="stylesheet" href="style.css">
+  <title>رزومه نادر نادری</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+    h1, h2, h3 {
+      color: #004d7a;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .info {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    ul {
+      padding-right: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .tags span {
+      display: inline-block;
+      background: #e0f0ff;
+      color: #0077b6;
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin: 4px;
+      font-size: 0.85em;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- نوبار -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">درباره من</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">نمونه پروژه‌ها</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">تماس با من</a></li>
-        </ul>
+  <div class="container">
+    <div class="header">
+      <h1>نادر نادری</h1>
+      <p>کارشناس ارشد زیرساخت شبکه و امنیت اطلاعات</p>
+      <div class="info">
+        <p>ایمیل: nadernaderinia@gmail.com | تلفن: ۰۹۱۳۳۶۳۴۹۹۶</p>
+        <p>وب‌سایت: <a href="http://www.parsysnet.ir">www.parsysnet.ir</a></p>
+        <p>کاشان، اصفهان</p>
       </div>
     </div>
-  </nav>
 
-  <!-- سکشن معرفی -->
-  <section id="home" class="hero d-flex align-items-center justify-content-center">
-    <div class="container text-center" data-aos="fade-up">
-      <h1>سلام، من نادر نادری هستم</h1>
-      <h2>متخصص شبکه، زیرساخت، VoIP، DevOps و امنیت</h2>
-      <p>با بیش از ۱۰ سال تجربه در طراحی، پیاده‌سازی و مشاوره شبکه و زیرساخت سازمانی</p>
-      <a href="#contact" class="btn btn-primary mt-3">شروع همکاری</a>
+    <div class="section">
+      <h2>خلاصه حرفه‌ای</h2>
+      <p>کارشناس زیرساخت شبکه با بیش از ۱۰ سال تجربه در طراحی، پیاده‌سازی و نگهداری شبکه‌های شهری و سازمانی. متخصص در امنیت شبکه، مجازی‌سازی، مانیتورینگ و DevOps. دارای تجربه مدیریت پروژه‌های فناوری اطلاعات در شهرداری کاشان و راه‌اندازی شبکه‌های پیچیده با استفاده از تجهیزات سیسکو، میکروتیک، HP و نرم‌افزارهای متن‌باز.</p>
     </div>
-    <div id="particles-js"></div>
-  </section>
 
-  <!-- درباره من -->
-  <section id="about" class="about py-5">
-    <div class="container" data-aos="fade-right">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4">
-          <img src="about.jpg" alt="نادر نادری" class="img-fluid rounded">
-        </div>
-        <div class="col-lg-6">
-          <h2>درباره من</h2>
-          <p>متخصص طراحی و اجرای زیرساخت‌های شبکه، پیاده‌سازی VoIP، استقرار سیستم‌های CI/CD، Docker، Ansible، و مدیریت پایگاه‌های داده. تجربه همکاری با سازمان‌های بزرگ و پروژه‌های صنعتی در سطح کشور.</p>
-          <ul class="list-unstyled">
-            <li><i class="fas fa-envelope me-2"></i> ایمیل: nadernaderinia@gmail.com</li>
-            <li><i class="fas fa-phone me-2"></i> موبایل: +98 913 363 4996</li>
-            <li><i class="fas fa-globe me-2"></i> وبسایت: www.parsysnet.ir</li>
-            <li><i class="fas fa-map-marker-alt me-2"></i> اصفهان، کاشان</li>
-          </ul>
-        </div>
+    <div class="section">
+      <h2>مهارت‌های فنی</h2>
+      <div class="tags">
+        <span>Cisco CCNA</span><span>MikroTik MTCRE</span><span>VMware</span>
+        <span>Zabbix</span><span>Docker</span><span>Git & Jenkins</span>
+        <span>Python & Django</span><span>Linux Server</span><span>Windows Server</span>
+        <span>HP Servers</span><span>Storage</span><span>Firewall</span>
+        <span>Issabel & Asterisk</span><span>Raspberry Pi</span>
       </div>
     </div>
-  </section>
 
-  <!-- خدمات -->
-  <section id="services" class="services py-5 bg-dark text-white">
-    <div class="container" data-aos="fade-up">
-      <div class="text-center mb-5">
-        <h2>خدمات تخصصی</h2>
-      </div>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="service-card p-4 text-center">
-            <i class="fas fa-network-wired fa-3x mb-3"></i>
-            <h5>طراحی و پیاده‌سازی شبکه</h5>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="service-card p-4 text-center">
-            <i class="fas fa-shield-alt fa-3x mb-3"></i>
-            <h5>مشاوره و امنیت شبکه</h5>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="service-card p-4 text-center">
-            <i class="fas fa-server fa-3x mb-3"></i>
-            <h5>راه‌اندازی زیرساخت CI/CD و DevOps</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- نمونه پروژه‌ها -->
-  <section id="portfolio" class="portfolio py-5">
-    <div class="container" data-aos="zoom-in">
-      <div class="text-center mb-5">
-        <h2>نمونه پروژه‌ها</h2>
-      </div>
-      <ul class="list-unstyled text-center">
-        <li>هلدینگ ساختمانی ملک</li>
-        <li>مجموعه هتل و رستوران‌های مرشدی</li>
-        <li>شهرداری قمصر، نوش‌آباد و نیاسر</li>
-        <li>بیمه نوین</li>
-        <li>شرکت سامیار</li>
-        <li>شرکت‌های فرش کاشان و آران و بیدگل</li>
-        <li>شرکت‌های پخش معتبر</li>
+    <div class="section">
+      <h2>تجربه کاری</h2>
+      <h3>شهرداری کاشان | کارشناس مسئول زیرساخت و شبکه</h3>
+      <p>فروردین ۱۳۹۴ تا کنون</p>
+      <ul>
+        <li>مدیریت شبکه بیش از ۲۰۰ نود سازمانی در سطح شهرداری</li>
+        <li>کاهش ۳۰٪ خاموشی‌ها با طراحی مجدد زیرساخت</li>
+        <li>پیاده‌سازی سیستم مجازی‌سازی و مانیتورینگ مرکزی</li>
+        <li>پشتیبانی از تیم‌های IT و آموزش نیروی انسانی</li>
+        <li>تحلیل، خرید و نصب تجهیزات سخت‌افزاری و نرم‌افزاری</li>
       </ul>
     </div>
-  </section>
 
-  <!-- تماس با من -->
-  <section id="contact" class="contact py-5 bg-dark text-white">
-    <div class="container" data-aos="fade-up">
-      <div class="text-center mb-5">
-        <h2>تماس با من</h2>
-      </div>
-      <form class="row g-3">
-        <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="نام شما" required>
-        </div>
-        <div class="col-md-6">
-          <input type="email" class="form-control" placeholder="ایمیل شما" required>
-        </div>
-        <div class="col-12">
-          <input type="text" class="form-control" placeholder="موضوع" required>
-        </div>
-        <div class="col-12">
-          <textarea class="form-control" rows="5" placeholder="پیام شما" required></textarea>
-        </div>
-        <div class="col-12 text-center">
-          <button type="submit" class="btn btn-primary">ارسال پیام</button>
-        </div>
-      </form>
+    <div class="section">
+      <h2>تحصیلات</h2>
+      <p><strong>کارشناسی ارتباطات و فناوری اطلاعات</strong> | دانشگاه شهید رجایی کاشان<br>معدل: ۱۸ | ۱۴۰۲ - اکنون</p>
     </div>
-  </section>
 
-  <!-- فوتر -->
-  <footer class="footer py-3 text-center">
-    <div class="container">
-      <p class="mb-0">&copy; 2025 نادر نادری | تمام حقوق محفوظ است.</p>
+    <div class="section">
+      <h2>گواهینامه‌ها و دوره‌ها</h2>
+      <ul>
+        <li>LPIC-1 & LPIC-2 – خانه لینوکس ایران</li>
+        <li>DevOps – خانه لینوکس ایران</li>
+        <li>CCNA – دوره تخصصی شبکه</li>
+        <li>MikroTik MTCRE</li>
+        <li>Docker, Git & Jenkins</li>
+        <li>Zabbix – مانیتورینگ شبکه</li>
+      </ul>
     </div>
-  </footer>
 
-  <!-- اسکریپت ها -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true });
-    particlesJS.load('particles-js', 'particles.json');
-    
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <div class="section">
+      <h2>مهارت‌های نرم</h2>
+      <ul>
+        <li>رهبری تیم و بهینه‌سازی منابع</li>
+        <li>حل مسئله در شرایط بحرانی</li>
+        <li>توانایی کار تیمی و مدیریت اختلاف</li>
+        <li>خلاقیت در اجرای راهکارهای جدید</li>
+      </ul>
+    </div>
 
-<script>
-  AOS.init({ once: true });
-  particlesJS.load('particles-js', 'particles.json');
-</script>
-
+    <div class="section">
+      <h2>زبان‌ها</h2>
+      <ul>
+        <li>فارسی: زبان مادری</li>
+        <li>انگلیسی: متوسط (خواندن، نوشتن، شنیداری و مکالمه - سطح B1)</li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>
