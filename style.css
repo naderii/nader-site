@@ -1,12 +1,13 @@
-/* استایل کلی */
+/* فونت و پایه */
 body {
   font-family: 'Vazir', sans-serif;
   background-color: #0e0e0e;
   color: #eee;
+  line-height: 1.8;
   scroll-behavior: smooth;
 }
 
-/* Scrollbar زیبا */
+/* اسکرول بار زیبا */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -20,8 +21,8 @@ body {
 
 /* Navbar */
 .navbar {
-  background: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.85);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 .navbar .nav-link {
   color: #fff;
@@ -38,6 +39,9 @@ body {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hero h1 {
   font-size: 48px;
@@ -46,12 +50,13 @@ body {
 .hero h2 {
   font-size: 24px;
   color: #fff;
+  margin-top: 10px;
 }
 .hero p {
   color: #ccc;
 }
 
-/* Particles Background */
+/* particles.js background */
 #particles-js {
   position: absolute;
   width: 100%;
@@ -64,7 +69,9 @@ body {
 /* About */
 .about h2 {
   color: #00c6ff;
-  margin-bottom: 20px;
+}
+.about p {
+  color: #ccc;
 }
 
 /* Services */
@@ -74,6 +81,7 @@ body {
 .service-card {
   background: #222;
   border-radius: 15px;
+  padding: 30px;
   transition: all 0.3s;
 }
 .service-card:hover {
@@ -89,6 +97,14 @@ body {
 .portfolio h2 {
   color: #00c6ff;
 }
+.portfolio ul {
+  list-style: none;
+  padding: 0;
+}
+.portfolio ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
 
 /* Contact */
 .contact h2 {
@@ -101,7 +117,6 @@ body {
 }
 .contact .form-control:focus {
   background: #333;
-  color: #fff;
 }
 .contact button {
   background: #00c6ff;
@@ -115,4 +130,9 @@ body {
 .footer {
   background: #0a0a0a;
   color: #aaa;
+}
+
+/* Animation AOS custom */
+[data-aos] {
+  transition: all 1s ease-in-out;
 }
