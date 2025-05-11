@@ -8,6 +8,7 @@
   <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -24,6 +25,7 @@
         <li class="nav-item"><a class="nav-link" href="#skills">مهارت‌ها</a></li>
         <li class="nav-item"><a class="nav-link" href="#experience">سوابق</a></li>
         <li class="nav-item"><a class="nav-link" href="#portfolio">نمونه کار</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">تماس</a></li>
       </ul>
     </div>
   </div>
@@ -31,9 +33,15 @@
 
 <!-- Hero -->
 <header class="hero text-center text-white d-flex flex-column justify-content-center align-items-center">
-  <img src="nader.jpg" alt="Profile" class="rounded-circle mb-4" width="150" height="150">
+  <img src="nader.jpg" alt="Profile" class="rounded-circle mb-4 profile-img">
   <h1>سلام، من <span id="typed"></span></h1>
   <p class="lead mt-3">برنامه نویس و متخصص شبکه</p>
+  <div class="social-icons mt-4">
+    <a href="#"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
   <a href="#contact" class="btn btn-primary mt-4">تماس با من</a>
 </header>
 
@@ -41,33 +49,56 @@
 <section id="about" class="section py-5">
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">درباره من</h2>
-    <p>من متخصص زیرساخت شبکه با سال‌ها تجربه در طراحی، پیاده‌سازی و مدیریت سیستم‌های پیشرفته هستم. هدفم ارتقای کیفیت خدمات فناوری اطلاعات با تمرکز بر امنیت و کارایی است.</p>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p class="about-text">من متخصص زیرساخت شبکه با سال‌ها تجربه در طراحی، پیاده‌سازی و مدیریت سیستم‌های پیشرفته هستم. هدفم ارتقای کیفیت خدمات فناوری اطلاعات با تمرکز بر امنیت و کارایی است.</p>
+        <div class="personal-info mt-4">
+          <p><i class="fas fa-user"></i> <strong>نام:</strong> نادر نادری</p>
+          <p><i class="fas fa-phone"></i> <strong>تلفن:</strong> 09123456789</p>
+          <p><i class="fas fa-envelope"></i> <strong>ایمیل:</strong> nader@example.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> <strong>آدرس:</strong> کاشان، ایران</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="about-image">
+          <img src="https://via.placeholder.com/500x300" alt="About Me" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Skills -->
-<section id="skills" class="section py-5 bg-dark text-white">
+<section id="skills" class="section py-5 bg-light">
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">مهارت‌ها</h2>
     <div class="row">
       <div class="col-md-6">
-        <p>شبکه (CCNA)</p>
-        <div class="progress mb-3">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 90%">90%</div>
+        <div class="skill-item">
+          <p>شبکه (CCNA)</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%">90%</div>
+          </div>
         </div>
-        <p>لینوکس</p>
-        <div class="progress mb-3">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 85%">85%</div>
+        <div class="skill-item">
+          <p>لینوکس</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%">85%</div>
+          </div>
         </div>
       </div>
       <div class="col-md-6">
-        <p>VMware</p>
-        <div class="progress mb-3">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 80%">80%</div>
+        <div class="skill-item">
+          <p>VMware</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%">80%</div>
+          </div>
         </div>
-        <p>Docker & Git</p>
-        <div class="progress mb-3">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 75%">75%</div>
+        <div class="skill-item">
+          <p>Docker & Git</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%">75%</div>
+          </div>
         </div>
       </div>
     </div>
@@ -78,24 +109,115 @@
 <section id="experience" class="section py-5">
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">سوابق کاری</h2>
-    <ul class="timeline">
-      <li><strong>شهرداری کاشان</strong> - کارشناس زیرساخت شبکه (۱۳۹۴ - اکنون)</li>
-      <li><strong>دانشگاه شهید رجایی</strong> - کارشناسی فناوری اطلاعات (۱۴۰۲ - اکنون)</li>
-    </ul>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>کارشناس زیرساخت شبکه</h3>
+          <span class="date">۱۳۹۴ - اکنون</span>
+          <p>شهرداری کاشان</p>
+          <ul>
+            <li>طراحی و پیاده‌سازی شبکه سازمانی</li>
+            <li>مدیریت سرورها و زیرساخت مجازی</li>
+            <li>پیاده‌سازی راهکارهای امنیتی</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>دانشجو</h3>
+          <span class="date">۱۴۰۲ - اکنون</span>
+          <p>دانشگاه شهید رجایی</p>
+          <ul>
+            <li>کارشناسی فناوری اطلاعات</li>
+            <li>پروژه‌های تحقیقاتی در زمینه شبکه</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Portfolio -->
-<section id="portfolio" class="section py-5 bg-dark text-white">
+<section id="portfolio" class="section py-5 bg-light">
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">نمونه کارها</h2>
-    <p>در حال حاضر پروژه‌هایی در زمینه اتوماسیون شبکه، پیاده‌سازی زیرساخت ابری و امنیت سایبری انجام شده است.</p>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/300x200" alt="Project 1" class="img-fluid">
+          <div class="portfolio-overlay">
+            <h3>اتوماسیون شبکه</h3>
+            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/300x200" alt="Project 2" class="img-fluid">
+          <div class="portfolio-overlay">
+            <h3>زیرساخت ابری</h3>
+            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/300x200" alt="Project 3" class="img-fluid">
+          <div class="portfolio-overlay">
+            <h3>امنیت سایبری</h3>
+            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section py-5">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title">تماس با من</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <form class="contact-form">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="نام شما">
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="ایمیل شما">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="موضوع">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="5" placeholder="پیام شما"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">ارسال پیام</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div class="contact-info">
+          <h3>اطلاعات تماس</h3>
+          <p><i class="fas fa-map-marker-alt"></i> کاشان، ایران</p>
+          <p><i class="fas fa-phone"></i> 09123456789</p>
+          <p><i class="fas fa-envelope"></i> nader@example.com</p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="text-center py-4 bg-black text-white">
-  <p>© ۲۰۲۵ نادر نادری - تمامی حقوق محفوظ است.</p>
+<footer class="text-center py-4 bg-dark text-white">
+  <div class="container">
+    <p>© ۲۰۲۵ نادر نادری - تمامی حقوق محفوظ است.</p>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
