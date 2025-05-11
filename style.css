@@ -1,185 +1,118 @@
-/* style.css */
-
-/* فونت عمومی */
+/* استایل کلی */
 body {
-    font-family: 'Vazir', sans-serif;
-    background-color: #0e0e0e;
-    color: #fff;
-    line-height: 1.7;
+  font-family: 'Vazir', sans-serif;
+  background-color: #0e0e0e;
+  color: #eee;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar زیبا */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #222;
+}
+::-webkit-scrollbar-thumb {
+  background: #00c6ff;
+  border-radius: 10px;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #1f1f1f;
-    transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
-
 .navbar .nav-link {
-    color: #fff;
-    margin-left: 20px;
-    font-weight: 500;
+  color: #fff;
+  margin-left: 20px;
+  font-weight: 600;
 }
-
 .navbar .nav-link:hover {
-    color: #00c6ff;
+  color: #00c6ff;
 }
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    position: relative;
-    overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: 48px;
+  color: #00c6ff;
+}
+.hero h2 {
+  font-size: 24px;
+  color: #fff;
+}
+.hero p {
+  color: #ccc;
 }
 
-.hero-content h1 {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.hero-content h4 {
-    color: #00c6ff;
-    margin-bottom: 10px;
-}
-
-.hero-content p {
-    max-width: 500px;
-}
-
-.hero-btns .btn {
-    margin-right: 10px;
-}
-
-/* Hero Image */
-.hero-image {
-    position: relative;
-}
-
-.profile-img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 198, 255, 0.5);
-}
-
-/* About Section */
-.about {
-    padding: 80px 0;
-    background-color: #181818;
-}
-
-.section-header h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #00c6ff;
-}
-
-.section-header p {
-    font-size: 18px;
-    color: #ccc;
-}
-
-/* Info List */
-.info-list {
-    margin-top: 20px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.info-item i {
-    font-size: 24px;
-    margin-left: 15px;
-    color: #00c6ff;
-}
-
-.info-item div span {
-    font-weight: bold;
-}
-
-.info-item div p {
-    margin: 0;
-}
-
-/* Stats */
-.stats {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-item h4 {
-    font-size: 28px;
-    color: #00c6ff;
-}
-
-.stat-item p {
-    margin-top: 5px;
-}
-
-/* Skills Section */
-.skills {
-    padding: 80px 0;
-    background-color: #101010;
-}
-
-/* Preloader */
-.preloader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #0e0e0e;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.network-loader .node {
-    width: 10px;
-    height: 10px;
-    background: #00c6ff;
-    margin: 5px;
-    border-radius: 50%;
-    animation: bounce 1.2s infinite ease-in-out;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-/* Particles.js container */
+/* Particles Background */
 #particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
-/* Utility Classes */
-.glow {
-    width: 150px;
-    height: 150px;
-    background: #00c6ff;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    opacity: 0.4;
-    filter: blur(50px);
+/* About */
+.about h2 {
+  color: #00c6ff;
+  margin-bottom: 20px;
+}
+
+/* Services */
+.services h2 {
+  color: #00c6ff;
+}
+.service-card {
+  background: #222;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+.service-card:hover {
+  background: #00c6ff;
+  color: #000;
+}
+.service-card i {
+  color: #00c6ff;
+  margin-bottom: 10px;
+}
+
+/* Portfolio */
+.portfolio h2 {
+  color: #00c6ff;
+}
+
+/* Contact */
+.contact h2 {
+  color: #00c6ff;
+}
+.contact .form-control {
+  background: #222;
+  border: none;
+  color: #eee;
+}
+.contact .form-control:focus {
+  background: #333;
+  color: #fff;
+}
+.contact button {
+  background: #00c6ff;
+  border: none;
+}
+.contact button:hover {
+  background: #0072ff;
+}
+
+/* Footer */
+.footer {
+  background: #0a0a0a;
+  color: #aaa;
 }
