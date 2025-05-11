@@ -9,9 +9,21 @@
     body {
       font-family: 'Vazirmatn', sans-serif;
       margin: 0;
-      background: #f9f9f9;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    /* Default light theme */
+    body.light-mode {
+      background-color: #f9f9f9;
       color: #333;
     }
+
+    /* Dark theme */
+    body.dark-mode {
+      background-color: #333;
+      color: #f9f9f9;
+    }
+
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -19,28 +31,41 @@
       padding: 40px;
       border-radius: 16px;
       box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      transition: background-color 0.5s;
     }
+
+    /* Dark mode container */
+    .dark-mode .container {
+      background-color: #444;
+    }
+
     h1, h2, h3 {
       color: #004d7a;
     }
+
     .header {
       text-align: center;
       margin-bottom: 40px;
     }
+
     .info {
       margin-top: 10px;
       font-size: 0.9em;
       color: #666;
     }
+
     .section {
       margin-bottom: 40px;
     }
+
     ul {
       padding-right: 20px;
     }
+
     li {
       margin-bottom: 8px;
     }
+
     .tags span {
       display: inline-block;
       background: #e0f0ff;
@@ -49,6 +74,11 @@
       border-radius: 8px;
       margin: 4px;
       font-size: 0.85em;
+    }
+
+    .dark-mode .tags span {
+      background: #555;
+      color: #c3d0d8;
     }
   </style>
 </head>
@@ -85,8 +115,7 @@
       <h3>شهرداری کاشان | کارشناس مسئول زیرساخت و شبکه</h3>
       <p>فروردین ۱۳۹۴ تا کنون</p>
       <ul>
-        <li>مدیریت شبکه بیش از ۲۰۰ نود سازمانی در سطح شهرداری</li>
-        <li>کاهش ۳۰٪ خاموشی‌ها با طراحی مجدد زیرساخت</li>
+        <li>مدیریت شبکه بیش از ۱۰۰۰ نود سازمانی در سطح شهرداری</li>
         <li>پیاده‌سازی سیستم مجازی‌سازی و مانیتورینگ مرکزی</li>
         <li>پشتیبانی از تیم‌های IT و آموزش نیروی انسانی</li>
         <li>تحلیل، خرید و نصب تجهیزات سخت‌افزاری و نرم‌افزاری</li>
@@ -128,5 +157,21 @@
       </ul>
     </div>
   </div>
+
+  <script>
+    function setThemeBasedOnTime() {
+      const hour = new Date().getHours();
+      if (hour >= 18 || hour < 6) {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+      } else {
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+      }
+    }
+
+    // Set the theme when the page loads
+    setThemeBasedOnTime();
+  </script>
 </body>
 </html>
