@@ -3,11 +3,10 @@ body {
   font-family: 'Vazir', sans-serif;
   background-color: #0e0e0e;
   color: #eee;
-  line-height: 1.8;
   scroll-behavior: smooth;
 }
 
-/* اسکرول بار زیبا */
+/* اسکرول بار شیک */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -21,8 +20,8 @@ body {
 
 /* Navbar */
 .navbar {
-  background: rgba(0,0,0,0.85);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 .navbar .nav-link {
   color: #fff;
@@ -34,29 +33,20 @@ body {
 }
 
 /* Hero Section */
-.hero {
+.hero-section {
   height: 100vh;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.hero h1 {
-  font-size: 48px;
-  color: #00c6ff;
+.hero-section h1 {
+  font-size: 60px;
 }
-.hero h2 {
-  font-size: 24px;
-  color: #fff;
-  margin-top: 10px;
-}
-.hero p {
-  color: #ccc;
+.hero-section p {
+  font-size: 22px;
 }
 
-/* particles.js background */
+/* particles.js زمینه */
 #particles-js {
   position: absolute;
   width: 100%;
@@ -66,22 +56,20 @@ body {
   z-index: 0;
 }
 
-/* About */
-.about h2 {
+/* درباره من */
+#about h2 {
   color: #00c6ff;
 }
-.about p {
-  color: #ccc;
+#about p, #about li {
+  color: #333;
 }
 
-/* Services */
-.services h2 {
+/* خدمات */
+#services h2 {
   color: #00c6ff;
 }
 .service-card {
-  background: #222;
-  border-radius: 15px;
-  padding: 30px;
+  background: #1b1b1b;
   transition: all 0.3s;
 }
 .service-card:hover {
@@ -90,49 +78,48 @@ body {
 }
 .service-card i {
   color: #00c6ff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-/* Portfolio */
-.portfolio h2 {
+/* نمونه پروژه‌ها */
+#portfolio h2 {
   color: #00c6ff;
 }
-.portfolio ul {
-  list-style: none;
-  padding: 0;
+.card {
+  transition: 0.4s;
 }
-.portfolio ul li {
-  margin-bottom: 10px;
-  font-size: 18px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 198, 255, 0.3);
 }
 
-/* Contact */
-.contact h2 {
+/* تماس با من */
+#contact h2 {
   color: #00c6ff;
 }
-.contact .form-control {
+#contact .form-control {
   background: #222;
   border: none;
   color: #eee;
 }
-.contact .form-control:focus {
+#contact .form-control:focus {
   background: #333;
 }
-.contact button {
+#contact button {
   background: #00c6ff;
   border: none;
 }
-.contact button:hover {
+#contact button:hover {
   background: #0072ff;
 }
 
-/* Footer */
+/* فوتر */
 .footer {
   background: #0a0a0a;
   color: #aaa;
 }
 
-/* Animation AOS custom */
+/* AOS افکت زیباتر */
 [data-aos] {
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
