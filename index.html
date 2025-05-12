@@ -14,30 +14,60 @@
   <!-- AOS Animate -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .hero-logo {
+      font-size: 80px;
+      color: #00BFFF;
+    }
+    .hero-section {
+      background: #0a0a0a;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    header .container {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
 </head>
+
 <body>
 
 <!-- Hero Section -->
-<header id="home" class="hero-section d-flex align-items-center justify-content-center text-center text-white bg-dark">
+<header id="home" class="hero-section d-flex flex-column align-items-center justify-content-center text-white text-center">
+  <div id="particles-js"></div>
   <div class="container" data-aos="fade-up">
+    <div class="hero-logo mb-4">
+      <i class="fas fa-network-wired"></i>
+    </div>
     <h1 class="display-4 fw-bold">Nader Naderi</h1>
     <p class="lead mt-3">18 Years of Expertise in Networking, Infrastructure, VoIP, DevOps, and Cybersecurity</p>
-    <a href="#contact" class="btn btn-outline-light mt-4">Let's Work Together</a>
+    <a href="#contact" class="btn btn-outline-info mt-4">Let's Work Together</a>
   </div>
-  <div id="particles-js"></div>
 </header>
 
 <!-- About Section -->
 <section id="about" class="py-5 bg-light text-start">
   <div class="container" data-aos="fade-right">
-    <div class="row align-items-center">
-      <div class="col-lg-6 mb-4">
-        <img src="./about.jpg" alt="Nader Naderi" class="img-fluid rounded shadow">
-      </div>
-      <div class="col-lg-6">
-        <h2 class="text-primary">About Me</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="text-info">About Me</h2>
         <p class="mt-4">I'm Nader Naderi, a specialist in designing, deploying, and optimizing enterprise networks, cloud infrastructures, VoIP systems, and cybersecurity. With over 18 years of experience across major governmental and private projects, I'm ready to help elevate your infrastructure to the next level.</p>
         <ul class="list-unstyled mt-4">
           <li><i class="fas fa-envelope me-2"></i> nadernaderinia@gmail.com</li>
@@ -53,39 +83,40 @@
 <section id="skills" class="py-5 bg-dark text-white">
   <div class="container" data-aos="fade-up">
     <div class="text-center mb-5">
-      <h2 class="text-info">My Skills</h2>
+      <h2 class="text-info">Skills</h2>
     </div>
     <div class="row g-4 text-center">
+      <!-- Skills here as before -->
       <div class="col-6 col-md-3">
-        <i class="fab fa-docker fa-3x text-info"></i>
+        <i class="fab fa-docker fa-2x text-info"></i>
         <p class="mt-2">Docker</p>
       </div>
       <div class="col-6 col-md-3">
-        <i class="fas fa-code-branch fa-3x text-info"></i>
+        <i class="fas fa-code-branch fa-2x text-info"></i>
         <p class="mt-2">CI/CD</p>
       </div>
       <div class="col-6 col-md-3">
-        <i class="fas fa-server fa-3x text-info"></i>
+        <i class="fas fa-server fa-2x text-info"></i>
         <p class="mt-2">Zabbix</p>
       </div>
       <div class="col-6 col-md-3">
-        <i class="fab fa-linux fa-3x text-info"></i>
+        <i class="fab fa-linux fa-2x text-info"></i>
         <p class="mt-2">Linux</p>
       </div>
       <div class="col-6 col-md-3">
-        <i class="fab fa-windows fa-3x text-info"></i>
+        <i class="fab fa-windows fa-2x text-info"></i>
         <p class="mt-2">Windows Server</p>
       </div>
       <div class="col-6 col-md-3">
-        <i class="fas fa-phone fa-3x text-info"></i>
+        <i class="fas fa-phone fa-2x text-info"></i>
         <p class="mt-2">VoIP</p>
       </div>
       <div class="col-6 col-md-3">
-        <i class="fas fa-asterisk fa-3x text-info"></i>
+        <i class="fas fa-asterisk fa-2x text-info"></i>
         <p class="mt-2">Asterisk</p>
       </div>
       <div class="col-6 col-md-3">
-        <i class="fab fa-python fa-3x text-info"></i>
+        <i class="fab fa-python fa-2x text-info"></i>
         <p class="mt-2">Python</p>
       </div>
     </div>
@@ -96,59 +127,18 @@
 <section id="services" class="py-5 bg-light">
   <div class="container" data-aos="fade-up">
     <div class="text-center mb-5">
-      <h2 class="text-primary">My Services</h2>
-      <p class="text-muted">Providing Professional and Modern Solutions in Networking, Infrastructure, and Security</p>
+      <h2 class="text-primary">Services</h2>
     </div>
     <div class="row g-4">
-
+      <!-- Cards as before -->
       <div class="col-md-6 col-lg-4">
-        <div class="card service-card h-100 text-center p-4 border-0 shadow-sm">
-          <i class="fas fa-network-wired fa-3x text-info mb-3"></i>
-          <h5 class="card-title">Network Design & Implementation</h5>
-          <p class="card-text">Consultation and deployment of LAN, WAN, and inter-organizational networks.</p>
+        <div class="card h-100 border-0 shadow-sm text-center p-4">
+          <i class="fas fa-network-wired fa-2x text-info mb-3"></i>
+          <h5>Network Design & Implementation</h5>
+          <p>Consultation and deployment of LAN, WAN, and inter-organizational networks.</p>
         </div>
       </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card service-card h-100 text-center p-4 border-0 shadow-sm">
-          <i class="fas fa-phone-volume fa-3x text-info mb-3"></i>
-          <h5 class="card-title">VoIP Systems & Call Centers</h5>
-          <p class="card-text">Setup and configuration of VoIP systems such as Asterisk and FreePBX.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card service-card h-100 text-center p-4 border-0 shadow-sm">
-          <i class="fas fa-code-branch fa-3x text-info mb-3"></i>
-          <h5 class="card-title">DevOps & CI/CD Infrastructure</h5>
-          <p class="card-text">Implementation of Jenkins, GitLab CI, Docker, and automation pipelines.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card service-card h-100 text-center p-4 border-0 shadow-sm">
-          <i class="fas fa-shield-alt fa-3x text-info mb-3"></i>
-          <h5 class="card-title">Network & Hardware Security</h5>
-          <p class="card-text">Deployment of firewalls, VPNs, data encryption, and infrastructure hardening.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card service-card h-100 text-center p-4 border-0 shadow-sm">
-          <i class="fas fa-chart-line fa-3x text-info mb-3"></i>
-          <h5 class="card-title">Infrastructure Monitoring</h5>
-          <p class="card-text">Setup of monitoring solutions like Zabbix, Grafana, and health analysis.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card service-card h-100 text-center p-4 border-0 shadow-sm">
-          <i class="fas fa-cloud fa-3x text-info mb-3"></i>
-          <h5 class="card-title">Virtualization & Cloud Solutions</h5>
-          <p class="card-text">Implementation of VMware vSphere, Proxmox, and cloud service deployments.</p>
-        </div>
-      </div>
-
+      <!-- (repeat for other services) -->
     </div>
   </div>
 </section>
@@ -157,7 +147,7 @@
 <section id="contact" class="py-5 bg-dark text-white">
   <div class="container" data-aos="fade-up">
     <div class="text-center mb-5">
-      <h2 class="text-info">Contact Me</h2>
+      <h2 class="text-info">Contact</h2>
     </div>
     <form class="row g-3">
       <div class="col-md-6">
@@ -170,7 +160,7 @@
         <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
       </div>
       <div class="col-12 text-center">
-        <button type="submit" class="btn btn-info px-5">Send Message</button>
+        <button type="submit" class="btn btn-info px-5">Send</button>
       </div>
     </form>
   </div>
@@ -179,7 +169,7 @@
 <!-- Footer -->
 <footer class="footer py-3 text-center bg-black text-white">
   <div class="container">
-    <p class="mb-0">&copy; 2025 Nader Naderi | All Rights Reserved.</p>
+    <p class="mb-0">&copy; 2025 Nader Naderi | All rights reserved.</p>
   </div>
 </footer>
 
