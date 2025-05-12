@@ -96,6 +96,62 @@
         .card p {
             color: #666;
         }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .skill-card {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #1e3c72;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        
+        .skill-card h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .skill-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .skill-level {
+            width: 100%;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        
+        .level-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            border-radius: 4px;
+        }
         
         .experience-item {
             margin-bottom: 25px;
@@ -306,6 +362,123 @@
             </div>
         </section>
     </div>
+
+    <div class="container">
+      <section class="section">
+          <h2>مهارت‌های تخصصی</h2>
+          <div class="skills-container">
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fas fa-network-wired"></i>
+                  </div>
+                  <h3>CCNA</h3>
+                  <p>مهارت کامل در طراحی، پیاده‌سازی و عیب‌یابی شبکه‌های سیسکو</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 95%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fas fa-router"></i>
+                  </div>
+                  <h3>MTCRE</h3>
+                  <p>تخصص در روترهای میکروتیک و راه‌اندازی شبکه‌های پیشرفته</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 90%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fab fa-linux"></i>
+                  </div>
+                  <h3>LPIC 1, 2 & 305</h3>
+                  <p>تخصص کامل در مدیریت سرورهای لینوکسی و خدمات شبکه</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 92%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fab fa-git-alt"></i>
+                  </div>
+                  <h3>Git & Jenkins</h3>
+                  <p>مدیریت حرفه‌ای کدها و پیاده‌سازی خطوط تولید نرم‌افزار</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 85%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fas fa-chart-line"></i>
+                  </div>
+                  <h3>Zabbix</h3>
+                  <p>مانیتورینگ پیشرفته شبکه‌ها و سیستم‌ها با ظاهری</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 88%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fas fa-robot"></i>
+                  </div>
+                  <h3>Ansible</h3>
+                  <p>اتوماسیون مدیریت سیستم‌ها و پیکربندی خودکار</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 87%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <h3>Asterisk</h3>
+                  <p>راه‌اندازی سیستم‌های تلفنی تحت شبکه VoIP</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 90%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fas fa-server"></i>
+                  </div>
+                  <h3>VMware</h3>
+                  <p>مجازی‌سازی سرورها و مدیریت محیط‌های مجازی</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 93%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <h3>امنیت شبکه</h3>
+                  <p>پیاده‌سازی راهکارهای امنیتی و فایروال‌های پیشرفته</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 91%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill-card">
+                  <div class="skill-icon">
+                      <i class="fab fa-python"></i>
+                  </div>
+                  <h3>برنامه‌نویسی پایتون</h3>
+                  <p>توسعه اسکریپت‌های خودکارسازی و ابزارهای شبکه</p>
+                  <div class="skill-level">
+                      <div class="level-bar" style="width: 80%"></div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </div>
     
     <footer>
         <div class="container">
