@@ -94,33 +94,6 @@ body {
   background: #00c6ff;
   color: #000;
 }
-/* کارت‌های خدمات */
-.service-card {
-  background: #fff;
-  border-radius: 15px;
-  transition: all 0.4s ease-in-out;
-}
-.service-card:hover {
-  background: #00c6ff;
-  color: #fff;
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 198, 255, 0.3);
-}
-.service-card i {
-  transition: all 0.4s;
-}
-.service-card:hover i {
-  color: #000;
-}
-.service-card h5 {
-  margin-top: 15px;
-  font-weight: bold;
-}
-.service-card p {
-  margin-top: 10px;
-  font-size: 15px;
-  color: inherit;
-}
 
 /* نمونه پروژه ها */
 .card {
