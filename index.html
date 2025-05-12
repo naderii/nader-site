@@ -1,186 +1,330 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nader Naderi | Network & Infrastructure Specialist</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-  <!-- AOS Animate -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-  
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-    .hero-logo {
-      font-size: 80px;
-      color: #00BFFF;
-    }
-    .hero-section {
-      background: #0a0a0a;
-      height: 100vh;
-      position: relative;
-      overflow: hidden;
-    }
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-    header .container {
-      position: relative;
-      z-index: 2;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه شخصی نادر نادری | متخصص شبکه و امنیت</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 20px;
+        }
+        
+        .section {
+            margin: 40px 0;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #2a5298;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .skills-container, .experience-container, .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #1e3c72;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        
+        .card p {
+            color: #666;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 1.1rem;
+        }
+        
+        .company {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .description {
+            margin-top: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2a5298;
+            color: white;
+            border-radius: 20px 20px 0 0;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container, .experience-container, .services-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<!-- Hero Section -->
-<header id="home" class="hero-section d-flex flex-column align-items-center justify-content-center text-white text-center">
-  <div id="particles-js"></div>
-  <div class="container" data-aos="fade-up">
-    <div class="hero-logo mb-4">
-      <i class="fas fa-network-wired"></i>
-    </div>
-    <h1 class="display-4 fw-bold">Nader Naderi</h1>
-    <p class="lead mt-3">18 Years of Expertise in Networking, Infrastructure, VoIP, DevOps, and Cybersecurity</p>
-    <a href="#contact" class="btn btn-outline-info mt-4">Let's Work Together</a>
-  </div>
-</header>
-
-<!-- About Section -->
-<section id="about" class="py-5 bg-light text-start">
-  <div class="container" data-aos="fade-right">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <h2 class="text-info">About Me</h2>
-        <p class="mt-4">I'm Nader Naderi, a specialist in designing, deploying, and optimizing enterprise networks, cloud infrastructures, VoIP systems, and cybersecurity. With over 18 years of experience across major governmental and private projects, I'm ready to help elevate your infrastructure to the next level.</p>
-        <ul class="list-unstyled mt-4">
-          <li><i class="fas fa-envelope me-2"></i> nadernaderinia@gmail.com</li>
-          <li><i class="fas fa-phone me-2"></i> +98 913 363 4996</li>
-          <li><i class="fas fa-globe me-2"></i> www.parsysnet.ir</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="py-5 bg-dark text-white">
-  <div class="container" data-aos="fade-up">
-    <div class="text-center mb-5">
-      <h2 class="text-info">Skills</h2>
-    </div>
-    <div class="row g-4 text-center">
-      <!-- Skills here as before -->
-      <div class="col-6 col-md-3">
-        <i class="fab fa-docker fa-2x text-info"></i>
-        <p class="mt-2">Docker</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fas fa-code-branch fa-2x text-info"></i>
-        <p class="mt-2">CI/CD</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fas fa-server fa-2x text-info"></i>
-        <p class="mt-2">Zabbix</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fab fa-linux fa-2x text-info"></i>
-        <p class="mt-2">Linux</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fab fa-windows fa-2x text-info"></i>
-        <p class="mt-2">Windows Server</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fas fa-phone fa-2x text-info"></i>
-        <p class="mt-2">VoIP</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fas fa-asterisk fa-2x text-info"></i>
-        <p class="mt-2">Asterisk</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fab fa-python fa-2x text-info"></i>
-        <p class="mt-2">Python</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Services Section -->
-<section id="services" class="py-5 bg-light">
-  <div class="container" data-aos="fade-up">
-    <div class="text-center mb-5">
-      <h2 class="text-primary">Services</h2>
-    </div>
-    <div class="row g-4">
-      <!-- Cards as before -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-sm text-center p-4">
-          <i class="fas fa-network-wired fa-2x text-info mb-3"></i>
-          <h5>Network Design & Implementation</h5>
-          <p>Consultation and deployment of LAN, WAN, and inter-organizational networks.</p>
+    <header>
+        <div class="container">
+            <!-- تصویر پروفایل را اینجا اضافه کنید -->
+            <!-- <img src="profile.jpg" alt="نادر نادری" class="profile-img"> -->
+            <h1>نادر نادری</h1>
+            <p class="title">متخصص ارشد شبکه، امنیت اطلاعات و سیستم‌های ابری</p>
+            <p>با بیش از ۱۸ سال تجربه حرفه‌ای در زمینه شبکه و امنیت</p>
         </div>
-      </div>
-      <!-- (repeat for other services) -->
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>سوابق کاری</h2>
+            <div class="experience-container">
+                <div class="experience-item">
+                    <div class="job-title">کارشناس مسئول شبکه، زیرساخت و امنیت اطلاعات</div>
+                    <div class="company">شهرداری</div>
+                    <div class="date">۱۳۹۲ تا کنون</div>
+                    <div class="description">
+                        <p>مدیریت و پشتیبانی شبکه شهرداری، پیاده‌سازی امنیت اطلاعات، نظارت بر زیرساخت‌های فناوری اطلاعات</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-title">مدیر شبکه، سرور و راه‌اندازی VoIP</div>
+                    <div class="company">شرکت‌های مختلف</div>
+                    <div class="date">۱۳۹۰ تا ۱۳۹۲</div>
+                    <div class="description">
+                        <p>راه‌اندازی و مدیریت سرورها، پیاده‌سازی سیستم‌های تلفنی تحت شبکه (VoIP)، پشتیبانی شبکه</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-title">ادمین شبکه و سرور</div>
+                    <div class="company">شرکت‌های متعدد</div>
+                    <div class="date">۱۳۸۵ تا ۱۳۹۰</div>
+                    <div class="description">
+                        <p>مدیریت سرورها، پشتیبانی شبکه، عیب‌یابی و بهینه‌سازی زیرساخت‌های فناوری اطلاعات</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-title">ادمین شبکه</div>
+                    <div class="company">بندر عباس</div>
+                    <div class="date">۱۳۸۳ تا ۱۳۸۵</div>
+                    <div class="description">
+                        <p>پشتیبانی و مدیریت شبکه سازمانی، عیب‌یابی و رفع مشکلات شبکه</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>خدمات شرکت</h2>
+            <div class="services-container">
+                <div class="card">
+                    <h3>راه‌اندازی سرور</h3>
+                    <p>پیاده‌سازی سرورهای اختصاصی و مجازی با بالاترین سطح امنیت و کارایی</p>
+                </div>
+                
+                <div class="card">
+                    <h3>استوریج و ذخیره‌سازی</h3>
+                    <p>طراحی و پیاده‌سازی سیستم‌های ذخیره‌سازی سازمانی با قابلیت اطمینان بالا</p>
+                </div>
+                
+                <div class="card">
+                    <h3>مجازی‌سازها</h3>
+                    <p>راه‌اندازی محیط‌های مجازی با VMware و سایر پلتفرم‌های مجازی‌سازی</p>
+                </div>
+                
+                <div class="card">
+                    <h3>شبکه و زیرساخت</h3>
+                    <p>طراحی، اجرا و بهینه‌سازی شبکه‌های سازمانی و دیتاسنترها</p>
+                </div>
+                
+                <div class="card">
+                    <h3>فایروال و امنیت</h3>
+                    <p>پیاده‌سازی راهکارهای امنیتی پیشرفته و سیستم‌های فایروال</p>
+                </div>
+                
+                <div class="card">
+                    <h3>VoIP پیشرفته</h3>
+                    <p>راه‌اندازی سیستم‌های تلفنی تحت شبکه مبتنی بر Asterisk و سایر پلتفرم‌ها</p>
+                </div>
+                
+                <div class="card">
+                    <h3>برنامه‌نویسی پایتون</h3>
+                    <p>توسعه اسکریپت‌های خودکارسازی و برنامه‌های سفارشی</p>
+                </div>
+                
+                <div class="card">
+                    <h3>مشاوره فناوری اطلاعات</h3>
+                    <p>ارائه راهکارهای تخصصی برای بهینه‌سازی زیرساخت‌های فناوری اطلاعات</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>مهارت‌های تخصصی</h2>
+            <div class="skills-container">
+                <div class="card">
+                    <h3>CCNA</h3>
+                    <p>مهارت‌های پیشرفته در شبکه‌های سیسکو و راه‌اندازی زیرساخت‌های شبکه</p>
+                </div>
+                
+                <div class="card">
+                    <h3>MTCRE</h3>
+                    <p>تخصص در روترهای میکروتیک و راه‌اندازی شبکه‌های پیشرفته</p>
+                </div>
+                
+                <div class="card">
+                    <h3>LPIC 1, 2 & 305</h3>
+                    <p>تخصص کامل در سیستم‌عامل لینوکس و مدیریت سرورهای لینوکسی</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Git & Jenkins</h3>
+                    <p>مدیریت کدها و پیاده‌سازی CI/CD برای پروژه‌های نرم‌افزاری</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Zabbix</h3>
+                    <p>مانیتورینگ و نظارت بر عملکرد شبکه‌ها و سیستم‌ها</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Ansible</h3>
+                    <p>اتوماسیون مدیریت سیستم‌ها و پیکربندی خودکار</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Asterisk</h3>
+                    <p>راه‌اندازی و مدیریت سیستم‌های تلفنی مبتنی بر VoIP</p>
+                </div>
+                
+                <div class="card">
+                    <h3>VMware</h3>
+                    <p>مجازی‌سازی سرورها و مدیریت محیط‌های مجازی</p>
+                </div>
+            </div>
+        </section>
     </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-5 bg-dark text-white">
-  <div class="container" data-aos="fade-up">
-    <div class="text-center mb-5">
-      <h2 class="text-info">Contact</h2>
-    </div>
-    <form class="row g-3">
-      <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Your Name" required>
-      </div>
-      <div class="col-md-6">
-        <input type="email" class="form-control" placeholder="Your Email" required>
-      </div>
-      <div class="col-12">
-        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-      </div>
-      <div class="col-12 text-center">
-        <button type="submit" class="btn btn-info px-5">Send</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer py-3 text-center bg-black text-white">
-  <div class="container">
-    <p class="mb-0">&copy; 2025 Nader Naderi | All rights reserved.</p>
-  </div>
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ once: true });
-  particlesJS.load('particles-js', 'particles.json');
-</script>
-
+    
+    <footer>
+        <div class="container">
+            <p>© ۱۴۰۲ تمامی حقوق برای نادر نادری محفوظ است</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>تلفن:</span>
+                    <span>۰۹۱۳۳۶۳۴۹۹۶</span>
+                </div>
+                <div class="contact-item">
+                    <span>ایمیل:</span>
+                    <span>nadernaderinia@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>وبسایت شرکت:</span>
+                    <span>www.parsysnet.ir</span>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
