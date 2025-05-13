@@ -164,3 +164,34 @@ footer a:hover {
       padding: 15px;
   }
 }
+.skills .skill {
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills .skill:hover {
+  transform: scale(1.1);
+}
+
+.skills .skill i {
+  font-size: 2.5em; /* اندازه آیکون‌ها */
+  color: #004e92;
+  margin-bottom: 10px;
+}
+
+.skills .skill span {
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 600;
+}
