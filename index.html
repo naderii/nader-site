@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحه شخصی نادر نادری</title>
+    <title>رزومه نادر نادری</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+
+    <!-- Header -->
+    <header class="hero">
         <div class="container">
             <h1>نادر نادری</h1>
             <p class="title">کارشناس ارشد شبکه و امنیت اطلاعات</p>
         </div>
     </header>
 
+    <!-- Profile Section -->
     <section class="profile">
         <div class="container">
             <h2>مشخصات فردی</h2>
@@ -29,44 +33,92 @@
         </div>
     </section>
 
+    <!-- Education Section -->
     <section class="education">
         <div class="container">
             <h2>تحصیلات</h2>
-            <p>کارشناسی مهندسی فناوری اطلاعات، دانشگاه شهید رجایی کاشان، سال فارغ‌التحصیلی: ۱۴۰۰</p>
-        </div>
-    </section>
-
-    <section class="experience">
-        <div class="container">
-            <h2>سوابق شغلی</h2>
             <ul>
-                <li>۱۳۸۳ – ۱۳۸۵: مدیر شبکه – بندرعباس</li>
-                <li>۱۳۸۵ – ۱۳۸۹: مدیر سرور و شبکه – شرکت ربیع کاشان</li>
-                <li>۱۳۸۹ – ۱۳۹۲: مدیر فنی – شرکت آریا سیستم پارس کاشان</li>
-                <li>۱۳۹۲ – ۱۳۹۴: مدیر شبکه و سرور – شرکت ارتباط برتر کویر کاشان</li>
-                <li>۱۳۹۴ – تاکنون: کارشناس مسئول شبکه، زیرساخت و امنیت اطلاعات – شهرداری کاشان</li>
+                <li><strong>کارشناسی مهندسی فناوری اطلاعات</strong> - دانشگاه شهید رجایی کاشان، سال فارغ‌التحصیلی: ۱۴۰۰</li>
             </ul>
         </div>
     </section>
 
+    <!-- Work Experience Section with Timeline -->
+    <section class="work-experience">
+        <div class="container">
+            <h2>سوابق شغلی</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>۱۳۸۳ – ۱۳۸۵</h3>
+                    <p><strong>مدیر شبکه – بندرعباس</strong></p>
+                    <p>مدیریت و پشتیبانی شبکه‌های سازمانی، ارائه راه‌حل‌های مبتنی بر فناوری اطلاعات.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>۱۳۸۵ – ۱۳۸۹</h3>
+                    <p><strong>مدیر سرور و شبکه – شرکت ربیع کاشان</strong></p>
+                    <p>مدیریت سرورها، نگهداری و بهینه‌سازی شبکه‌های داخلی و ارتباطات از راه دور.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>۱۳۸۹ – ۱۳۹۲</h3>
+                    <p><strong>مدیر فنی – شرکت آریا سیستم پارس کاشان</strong></p>
+                    <p>توسعه و پشتیبانی سیستم‌های سخت‌افزاری و نرم‌افزاری شرکت.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>۱۳۹۲ – ۱۳۹۴</h3>
+                    <p><strong>مدیر شبکه و سرور – شرکت ارتباط برتر کویر کاشان</strong></p>
+                    <p>پیکربندی و مدیریت شبکه‌های سازمانی، نصب و راه‌اندازی سیستم‌های سرور.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>۱۳۹۴ – تاکنون</h3>
+                    <p><strong>کارشناس مسئول شبکه، زیرساخت و امنیت اطلاعات – شهرداری کاشان</strong></p>
+                    <p>مدیریت شبکه و زیرساخت‌ها، پیاده‌سازی و نگهداری سیستم‌های امنیتی و فایروال‌ها.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section with Icons -->
     <section class="skills">
         <div class="container">
             <h2>مهارت‌ها و تخصص‌ها</h2>
-            <ul>
-                <li>مجازی‌سازی با VMware vSphere/ESXi</li>
-                <li>مدیریت کانتینرها و سرویس‌های Docker</li>
-                <li>اتوماسیون با Ansible</li>
-                <li>پیکربندی سیستم‌های VoIP با Asterisk</li>
-                <li>راه‌اندازی سیستم‌های مانیتورینگ با Zabbix</li>
-                <li>مدیریت سرورهای ویندوز (Active Directory، DNS، DHCP)</li>
-                <li>تسلط کامل بر لینوکس (LPIC-1, 2, 305)</li>
-                <li>پیکربندی تجهیزات MikroTik (MTCRE, MTCWE)</li>
-                <li>فایروال‌ها: FortiGate، pfSense، OPNsense</li>
-                <li>راه‌اندازی ایمیل سرور (Exchange, Kerio Connect)</li>
-            </ul>
+            <div class="skills-list">
+                <div class="skill">
+                    <i class="fas fa-cloud"></i>
+                    <p>مجازی‌سازی با VMware vSphere/ESXi</p>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-docker"></i>
+                    <p>مدیریت کانتینرها و سرویس‌های Docker</p>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-ansible"></i>
+                    <p>اتوماسیون با Ansible</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-server"></i>
+                    <p>پیکربندی سیستم‌های VoIP با Asterisk</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-network-wired"></i>
+                    <p>راه‌اندازی سیستم‌های مانیتورینگ با Zabbix</p>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-linux"></i>
+                    <p>تسلط کامل بر لینوکس</p>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-mikrotik"></i>
+                    <p>پیکربندی تجهیزات MikroTik</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-fire"></i>
+                    <p>فایروال‌ها: FortiGate، pfSense، OPNsense</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Certifications Section -->
     <section class="certifications">
         <div class="container">
             <h2>مدارک فنی</h2>
@@ -74,31 +126,40 @@
                 <li>CCNA – Cisco Certified Network Associate</li>
                 <li>MCSA – Microsoft Certified Solutions Associate</li>
                 <li>MTCRE – MikroTik Certified Routing Engineer</li>
+                <li>MTCWE – MikroTik Certified Wireless Engineer</li>
                 <li>LPIC-1, LPIC-2, LPIC-305 – Linux Professional Institute</li>
+                <li>Server+ – CompTIA</li>
+                <li>Storage+ – CompTIA</li>
+                <li>Git & Jenkins</li>
+                <li>Zabbix Monitoring</li>
+                <li>Asterisk & VoIP</li>
+                <li>Exchange Server</li>
+                <li>Docker & Ansible</li>
+                <li>Kerio Control & Connect</li>
+                <li>Power BI</li>
+                <li>FortiGate Firewall</li>
+                <li>OPNsense & pfSense</li>
+                <li>VMware vSphere</li>
             </ul>
         </div>
     </section>
 
+    <!-- Languages Section -->
     <section class="languages">
         <div class="container">
             <h2>زبان‌ها</h2>
             <ul>
-                <li><strong>انگلیسی:</strong> خواندن و نوشتن: خوب، مکالمه: متوسط</li>
+                <li><strong>انگلیسی</strong>: خواندن و نوشتن (خوب), مکالمه (متوسط)</li>
             </ul>
         </div>
     </section>
 
-    <section class="summary">
-        <div class="container">
-            <h2>خلاصه حرفه‌ای</h2>
-            <p>کارشناس شبکه و زیرساخت با بیش از ۱۵ سال سابقه در طراحی، پیاده‌سازی و پشتیبانی شبکه‌های سازمانی...</p>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>تماس با من: <a href="mailto:nadernaderinia@gmail.com">nadernaderinia@gmail.com</a></p>
         </div>
     </footer>
+
 </body>
 </html>
