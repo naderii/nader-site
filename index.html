@@ -1,356 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nader Nadiri | Network and Infrastructure Specialist</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-    .float { animation: float 6s ease-in-out infinite; }
-    
-    @keyframes pulse-ring {
-      0% { transform: scale(0.8); opacity: 0.8; }
-      100% { transform: scale(1.3); opacity: 0; }
-    }
-    .pulse-ring::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border: 2px solid #3B82F6;
-      border-radius: 9999px;
-      animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    .hexagon {
-      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    }
-
-    .network-grid {
-      background-image: radial-gradient(circle at 1px 1px, #3B82F6 1px, transparent 0);
-      background-size: 40px 40px;
-      opacity: 0.1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه شخصی نادر نادری</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-white">
-  <!-- Navigation -->
-  <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-lg border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex items-center">
-          <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">NN</span>
+<body>
+    <header>
+        <div class="container">
+            <h1>نادر نادری</h1>
+            <p class="title">کارشناس ارشد شبکه و امنیت اطلاعات</p>
         </div>
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors">About</a>
-          <a href="#expertise" class="text-gray-300 hover:text-blue-400 transition-colors">Expertise</a>
-          <a href="#career" class="text-gray-300 hover:text-blue-400 transition-colors">Timeline</a>
-          <a href="#services" class="text-gray-300 hover:text-blue-400 transition-colors">Services</a>
-          <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 network-grid"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="space-y-8">
-        <h1 class="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600 float">
-          Nader Nadiri
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
-          Architecting robust network infrastructures and implementing cutting-edge security solutions with 18 years of expertise
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" class="relative inline-flex items-center px-8 py-3 bg-blue-600 rounded-full overflow-hidden group">
-            <span class="absolute w-full h-full bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-            <span class="relative">Start Collaboration</span>
-          </a>
-          <a href="#expertise" class="px-8 py-3 border border-blue-400/30 rounded-full hover:bg-blue-600/10 transition-colors">
-            Explore Expertise
-          </a>
+    <section class="profile">
+        <div class="container">
+            <h2>مشخصات فردی</h2>
+            <ul>
+                <li><strong>نام و نام خانوادگی:</strong> نادر نادری</li>
+                <li><strong>تاریخ تولد:</strong> ۱۳۶۴</li>
+                <li><strong>وضعیت تاهل:</strong> متاهل</li>
+                <li><strong>وضعیت نظام وظیفه:</strong> پایان خدمت</li>
+                <li><strong>محل سکونت:</strong> استان اصفهان، شهرستان کاشان</li>
+                <li><strong>موبایل:</strong> 09133634996</li>
+                <li><strong>ایمیل:</strong> nadernaderinia@gmail.com</li>
+            </ul>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-32 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-black via-blue-900/20 to-black"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl transform rotate-6 scale-105"></div>
-          <img 
-            src="./about.jpg" 
-            alt="Professional" 
-            class="relative rounded-3xl w-full h-[600px] object-cover transform -rotate-3 transition-transform hover:rotate-0 duration-500"
-          />
+    <section class="education">
+        <div class="container">
+            <h2>تحصیلات</h2>
+            <p>کارشناسی مهندسی فناوری اطلاعات، دانشگاه شهید رجایی کاشان، سال فارغ‌التحصیلی: ۱۴۰۰</p>
         </div>
-        <div class="space-y-8">
-          <h2 class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-            About Me
-          </h2>
-          <p class="text-xl text-gray-400 leading-relaxed">
-            As a Network and Infrastructure Specialist, I bring extensive experience in designing, implementing, 
-            and optimizing enterprise-level solutions. My expertise spans across cloud infrastructure, VoIP systems, 
-            and cybersecurity, ensuring robust and scalable solutions for organizations.
-          </p>
-          <div class="space-y-6">
-            <a href="mailto:nadernaderinia@gmail.com" class="block group">
-              <div class="flex items-center space-x-4 p-4 rounded-xl bg-blue-900/20 hover:bg-blue-900/30 transition-colors">
-                <span class="text-2xl">📧</span>
-                <span class="text-gray-300 group-hover:text-blue-400 transition-colors">nadernaderinia@gmail.com</span>
-              </div>
-            </a>
-            <a href="tel:+989133634996" class="block group">
-              <div class="flex items-center space-x-4 p-4 rounded-xl bg-blue-900/20 hover:bg-blue-900/30 transition-colors">
-                <span class="text-2xl">📱</span>
-                <span class="text-gray-300 group-hover:text-blue-400 transition-colors">+98 913 363 4996</span>
-              </div>
-            </a>
-            <a href="https://www.parsysnet.ir" target="_blank" class="block group">
-              <div class="flex items-center space-x-4 p-4 rounded-xl bg-blue-900/20 hover:bg-blue-900/30 transition-colors">
-                <span class="text-2xl">🌐</span>
-                <span class="text-gray-300 group-hover:text-blue-400 transition-colors">www.parsysnet.ir</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Expertise Section -->
-  <section id="expertise" class="py-32 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-black via-blue-900/20 to-black"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-5xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-        Technical Expertise
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="group">
-          <div class="hexagon aspect-square flex flex-col items-center justify-center p-8 bg-blue-900/20 backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <span class="text-5xl mb-4">🐳</span>
-            <p class="text-xl font-medium text-center text-gray-300 group-hover:text-blue-400 transition-colors">Docker</p>
-          </div>
+    <section class="experience">
+        <div class="container">
+            <h2>سوابق شغلی</h2>
+            <ul>
+                <li>۱۳۸۳ – ۱۳۸۵: مدیر شبکه – بندرعباس</li>
+                <li>۱۳۸۵ – ۱۳۸۹: مدیر سرور و شبکه – شرکت ربیع کاشان</li>
+                <li>۱۳۸۹ – ۱۳۹۲: مدیر فنی – شرکت آریا سیستم پارس کاشان</li>
+                <li>۱۳۹۲ – ۱۳۹۴: مدیر شبکه و سرور – شرکت ارتباط برتر کویر کاشان</li>
+                <li>۱۳۹۴ – تاکنون: کارشناس مسئول شبکه، زیرساخت و امنیت اطلاعات – شهرداری کاشان</li>
+            </ul>
         </div>
-        <div class="group">
-          <div class="hexagon aspect-square flex flex-col items-center justify-center p-8 bg-blue-900/20 backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <span class="text-5xl mb-4">⚡</span>
-            <p class="text-xl font-medium text-center text-gray-300 group-hover:text-blue-400 transition-colors">CI/CD</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="hexagon aspect-square flex flex-col items-center justify-center p-8 bg-blue-900/20 backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <span class="text-5xl mb-4">🖥️</span>
-            <p class="text-xl font-medium text-center text-gray-300 group-hover:text-blue-400 transition-colors">Zabbix</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="hexagon aspect-square flex flex-col items-center justify-center p-8 bg-blue-900/20 backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <span class="text-5xl mb-4">🐧</span>
-            <p class="text-xl font-medium text-center text-gray-300 group-hover:text-blue-400 transition-colors">Linux</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="hexagon aspect-square flex flex-col items-center justify-center p-8 bg-blue-900/20 backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <span class="text-5xl mb-4">🪟</span>
-            <p class="text-xl font-medium text-center text-gray-300 group-hover:text-blue-400 transition-colors">Windows Server</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="hexagon aspect-square flex flex-col items-center justify-center p-8 bg-blue-900/20 backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <span class="text-5xl mb-4">📞</span>
-            <p class="text-xl font-medium text-center text-gray-300 group-hover:text-blue-400 transition-colors">VoIP</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="hexagon aspect-square flex flex-col items-center justify-center p-8 bg-blue-900/20 backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <span class="text-5xl mb-4">⭐</span>
-            <p class="text-xl font-medium text-center text-gray-300 group-hover:text-blue-400 transition-colors">Asterisk</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="hexagon aspect-square flex flex-col items-center justify-center p-8 bg-blue-900/20 backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <span class="text-5xl mb-4">🐍</span>
-            <p class="text-xl font-medium text-center text-gray-300 group-hover:text-blue-400 transition-colors">Python</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Career Timeline Section -->
-<section id="career" class="py-32 relative bg-gradient-to-b from-black via-blue-900/10 to-black">
-  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-5xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
-      Career Timeline
-    </h2>
-    <div class="relative border-l-4 border-blue-500 pl-6 space-y-12">
-      
-      <!-- Timeline Item -->
-      <div class="relative">
-        <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-1.5 border-4 border-black"></div>
-        <h3 class="text-xl font-semibold text-blue-300">2003 – 2006</h3>
-        <p class="text-lg text-gray-300">Network Administrator at Bandar Abbas Port – Oversaw enterprise networking, infrastructure setup, and user support for a major logistics facility.</p>
-      </div>
-
-      <div class="relative">
-        <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-1.5 border-4 border-black"></div>
-        <h3 class="text-xl font-semibold text-blue-300">2006 – 2010</h3>
-        <p class="text-lg text-gray-300">Server Administrator at Rabee Company (Kashan) – Managed Windows Server environments, file systems, backups, and server uptime.</p>
-      </div>
-
-      <div class="relative">
-        <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-1.5 border-4 border-black"></div>
-        <h3 class="text-xl font-semibold text-blue-300">2010 – 2013</h3>
-        <p class="text-lg text-gray-300">Technical Manager at Arya System Pars – Led technical teams, deployed VoIP solutions, and implemented advanced network routing and security.</p>
-      </div>
-
-      <div class="relative">
-        <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-1.5 border-4 border-black"></div>
-        <h3 class="text-xl font-semibold text-blue-300">2013 – 2015</h3>
-        <p class="text-lg text-gray-300">Network Manager at Ertebat Bartar Kavir (Kashan) – Designed and maintained scalable network infrastructures, provided strategic technical direction.</p>
-      </div>
-
-      <div class="relative">
-        <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-1.5 border-4 border-black"></div>
-        <h3 class="text-xl font-semibold text-blue-300">2015 – Present</h3>
-        <p class="text-lg text-gray-300">Senior Network & Infrastructure Specialist at Municipality of Kashan – Responsible for overall IT infrastructure, data center, network security, and disaster recovery planning for city-wide services.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-  <!-- Services Section -->
-  <section id="services" class="py-32 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-black via-blue-900/20 to-black"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-5xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-        Professional Services
-      </h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="group">
-          <div class="relative h-full p-8 bg-blue-900/20 rounded-3xl backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-            <span class="text-5xl mb-6 block">🌐</span>
-            <h3 class="text-2xl font-semibold mb-4 text-gray-100">Network Design and Implementation</h3>
-            <p class="text-gray-400">Expert design and implementation of LAN/WAN networks for organizations and businesses</p>
-          </div>
+    <section class="skills">
+        <div class="container">
+            <h2>مهارت‌ها و تخصص‌ها</h2>
+            <ul>
+                <li>مجازی‌سازی با VMware vSphere/ESXi</li>
+                <li>مدیریت کانتینرها و سرویس‌های Docker</li>
+                <li>اتوماسیون با Ansible</li>
+                <li>پیکربندی سیستم‌های VoIP با Asterisk</li>
+                <li>راه‌اندازی سیستم‌های مانیتورینگ با Zabbix</li>
+                <li>مدیریت سرورهای ویندوز (Active Directory، DNS، DHCP)</li>
+                <li>تسلط کامل بر لینوکس (LPIC-1, 2, 305)</li>
+                <li>پیکربندی تجهیزات MikroTik (MTCRE, MTCWE)</li>
+                <li>فایروال‌ها: FortiGate، pfSense، OPNsense</li>
+                <li>راه‌اندازی ایمیل سرور (Exchange, Kerio Connect)</li>
+            </ul>
         </div>
-        <div class="group">
-          <div class="relative h-full p-8 bg-blue-900/20 rounded-3xl backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-            <span class="text-5xl mb-6 block">📞</span>
-            <h3 class="text-2xl font-semibold mb-4 text-gray-100">VoIP and Call Center Setup</h3>
-            <p class="text-gray-400">Professional installation and configuration of Asterisk and FreePBX systems</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="relative h-full p-8 bg-blue-900/20 rounded-3xl backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-            <span class="text-5xl mb-6 block">⚡</span>
-            <h3 class="text-2xl font-semibold mb-4 text-gray-100">DevOps and CI/CD Infrastructure</h3>
-            <p class="text-gray-400">Implementation of Jenkins, GitLab CI, Docker, and automation solutions</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="relative h-full p-8 bg-blue-900/20 rounded-3xl backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-            <span class="text-5xl mb-6 block">🛡️</span>
-            <h3 class="text-2xl font-semibold mb-4 text-gray-100">Network and Hardware Security</h3>
-            <p class="text-gray-400">Implementation of network security solutions, VPN, and firewall systems</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="relative h-full p-8 bg-blue-900/20 rounded-3xl backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-            <span class="text-5xl mb-6 block">📊</span>
-            <h3 class="text-2xl font-semibold mb-4 text-gray-100">Infrastructure Monitoring</h3>
-            <p class="text-gray-400">Setup and management of Zabbix and Grafana monitoring solutions</p>
-          </div>
-        </div>
-        <div class="group">
-          <div class="relative h-full p-8 bg-blue-900/20 rounded-3xl backdrop-blur-sm hover:bg-blue-900/30 transition-all transform hover:-translate-y-2">
-            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-            <span class="text-5xl mb-6 block">☁️</span>
-            <h3 class="text-2xl font-semibold mb-4 text-gray-100">Virtualization and Cloud Solutions</h3>
-            <p class="text-gray-400">Implementation of VMware vSphere, Proxmox, and cloud infrastructure</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-32 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-black via-blue-900/20 to-black"></div>
-    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-5xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-        Let's Connect
-      </h2>
-      <form class="space-y-8">
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="space-y-2">
-            <label class="text-sm font-medium text-gray-300">Your Name</label>
-            <input
-              type="text"
-              class="w-full px-6 py-4 bg-blue-900/20 rounded-xl border border-blue-400/20 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm text-white"
-              required
-            />
-          </div>
-          <div class="space-y-2">
-            <label class="text-sm font-medium text-gray-300">Your Email</label>
-            <input
-              type="email"
-              class="w-full px-6 py-4 bg-blue-900/20 rounded-xl border border-blue-400/20 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm text-white"
-              required
-            />
-          </div>
+    <section class="certifications">
+        <div class="container">
+            <h2>مدارک فنی</h2>
+            <ul>
+                <li>CCNA – Cisco Certified Network Associate</li>
+                <li>MCSA – Microsoft Certified Solutions Associate</li>
+                <li>MTCRE – MikroTik Certified Routing Engineer</li>
+                <li>LPIC-1, LPIC-2, LPIC-305 – Linux Professional Institute</li>
+            </ul>
         </div>
-        <div class="space-y-2">
-          <label class="text-sm font-medium text-gray-300">Your Message</label>
-          <textarea
-            rows="5"
-            class="w-full px-6 py-4 bg-blue-900/20 rounded-xl border border-blue-400/20 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm text-white"
-            required
-          ></textarea>
-        </div>
-        <div class="text-center">
-          <button
-            type="submit"
-            class="px-12 py-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl text-lg font-medium hover:opacity-90 transition-opacity transform hover:scale-105"
-          >
-            Send Message
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-8 bg-black/50 backdrop-blur-sm text-center border-t border-white/10">
-    <p class="text-gray-400">&copy; 2025 Nader Nadiri | All Rights Reserved.</p>
-  </footer>
+    <section class="languages">
+        <div class="container">
+            <h2>زبان‌ها</h2>
+            <ul>
+                <li><strong>انگلیسی:</strong> خواندن و نوشتن: خوب، مکالمه: متوسط</li>
+            </ul>
+        </div>
+    </section>
 
-  <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+    <section class="summary">
+        <div class="container">
+            <h2>خلاصه حرفه‌ای</h2>
+            <p>کارشناس شبکه و زیرساخت با بیش از ۱۵ سال سابقه در طراحی، پیاده‌سازی و پشتیبانی شبکه‌های سازمانی...</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>تماس با من: <a href="mailto:nadernaderinia@gmail.com">nadernaderinia@gmail.com</a></p>
+        </div>
+    </footer>
 </body>
 </html>
