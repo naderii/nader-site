@@ -697,3 +697,49 @@ footer a:hover {
     from { width: 0; }
     to { width: 100%; }
 }
+
+/* ===== Typing Cursor ===== */
+.typing-cursor {
+    display: inline;
+    color: var(--terminal-green);
+    font-weight: bold;
+    animation: cursorBlink 0.7s infinite;
+    text-shadow: var(--glow-green);
+}
+
+@keyframes cursorBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* ===== Hide elements initially for typing =====  */
+.hero h1,
+.hero .title,
+.hero .summary {
+    visibility: visible;
+}
+
+/* ===== Profile items animation ===== */
+.profile-details li {
+    transition: border-color 0.3s ease;
+}
+
+/* ===== Timeline title animation ===== */
+.timeline-content h3 {
+    min-height: 1.5em;
+}
+
+/* ===== Skill hover improvement ===== */
+.skill {
+    transition: all 0.3s ease, transform 0.15s ease;
+}
+
+.cert-item {
+    transition: all 0.3s ease, transform 0.15s ease;
+}
+
+/* ===== Notification prompt ===== */
+.notif-prompt {
+    color: var(--terminal-blue);
+    margin-left: 8px;
+}

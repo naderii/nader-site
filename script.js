@@ -73,11 +73,151 @@ function showLoadingMessage() {
     } else {
         setTimeout(() => {
             loadingScreen.classList.add('hidden');
+            // Start typing effects after loading
+            setTimeout(initTypingEffects, 500);
         }, 800);
     }
 }
 
 showLoadingMessage();
+
+// ===== Typing Effect System =====
+class TypeWriter {
+    constructor(element, text, speed = 50, callback = null) {
+        this.element = element;
+        this.text = text;
+        this.speed = speed;
+        this.callback = callback;
+        this.index = 0;
+        this.cursor = document.createElement('span');
+        this.cursor.className = 'typing-cursor';
+        this.cursor.textContent = '█';
+    }
+
+    start() {
+        this.element.textContent = '';
+        this.element.appendChild(this.cursor);
+        this.type();
+    }
+
+    type() {
+        if (this.index < this.text.length) {
+            this.cursor.before(this.text.charAt(this.index));
+            this.index++;
+            setTimeout(() => this.type(), this.speed);
+        } else {
+            // Remove cursor after typing is done
+            setTimeout(() => {
+                this.cursor.remove();
+                if (this.callback) this.callback();
+            }, 500);
+        }
+    }
+}
+
+// ===== Sequential Content Reveal =====
+function revealContent(container, delay = 100) {
+    const children = container.children;
+    Array.from(children).forEach((child, index) => {
+        child.style.opacity = '0';
+        child.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+            child.style.transition = 'all 0.4s ease';
+            child.style.opacity = '1';
+            child.style.transform = 'translateY(0)';
+        }, delay * index);
+    });
+}
+
+// ===== Initialize Typing Effects =====
+function initTypingEffects() {
+    // Hero Section - Main Title
+    const heroTitle = document.querySelector('.hero h1');
+    const heroTitleText = heroTitle.textContent;
+    const heroTitleWriter = new TypeWriter(heroTitle, heroTitleText, 80, () => {
+        // After title, type the job title
+        const heroJobTitle = document.querySelector('.hero .title');
+        const jobTitleText = heroJobTitle.textContent;
+        const jobTitleWriter = new TypeWriter(heroJobTitle, jobTitleText, 40, () => {
+            // After job title, reveal summary with terminal effect
+            const summary = document.querySelector('.hero .summary');
+            summary.style.opacity = '0';
+            setTimeout(() => {
+                summary.style.transition = 'opacity 0.5s ease';
+                summary.style.opacity = '1';
+                typeTextInElement(summary, summary.textContent, 15);
+            }, 200);
+        });
+        jobTitleWriter.start();
+    });
+    heroTitle.style.visibility = 'visible';
+    heroTitleWriter.start();
+
+    // Section Headers with typing effect on scroll
+    observeSectionHeaders();
+}
+
+// ===== Type text character by character =====
+function typeTextInElement(element, text, speed = 30) {
+    const originalContent = text;
+    element.textContent = '';
+    
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    cursor.textContent = '█';
+    element.appendChild(cursor);
+    
+    let index = 0;
+    
+    function typeChar() {
+        if (index < originalContent.length) {
+            cursor.before(originalContent.charAt(index));
+            index++;
+            setTimeout(typeChar, speed);
+        } else {
+            cursor.classList.add('blink');
+            setTimeout(() => cursor.remove(), 1000);
+        }
+    }
+    
+    typeChar();
+}
+
+// ===== Observe Section Headers for Typing Effect =====
+function observeSectionHeaders() {
+    const headers = document.querySelectorAll('section h2');
+    
+    const headerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.typed) {
+                entry.target.dataset.typed = 'true';
+                const text = entry.target.textContent;
+                const writer = new TypeWriter(entry.target, text, 60, () => {
+                    // After header typed, reveal section content
+                    const container = entry.target.closest('.container');
+                    if (container) {
+                        const contentElements = container.querySelectorAll(':scope > *:not(h2)');
+                        contentElements.forEach((el, index) => {
+                            el.style.opacity = '0';
+                            el.style.transform = 'translateX(-20px)';
+                            setTimeout(() => {
+                                el.style.transition = 'all 0.5s ease';
+                                el.style.opacity = '1';
+                                el.style.transform = 'translateX(0)';
+                            }, 200 + (index * 150));
+                        });
+                    }
+                });
+                writer.start();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    headers.forEach(header => {
+        header.style.visibility = 'visible';
+        headerObserver.observe(header);
+    });
+}
 
 // ===== Terminal Input =====
 const terminalInput = document.createElement('div');
@@ -91,25 +231,25 @@ document.body.appendChild(terminalInput);
 const cmdInput = document.getElementById('cmd-input');
 
 const commands = {
-    'help': () => showNotification('دستورات: skills, contact, about, clear, top'),
+    'help': () => showNotification('دستورات: skills, contact, about, clear, top, whoami, date'),
     'skills': () => {
         document.querySelector('.skills').scrollIntoView({ behavior: 'smooth' });
-        showNotification('📂 در حال نمایش مهارت‌ها...');
+        showNotification('در حال نمایش مهارت‌ها...');
     },
     'contact': () => {
         document.querySelector('footer').scrollIntoView({ behavior: 'smooth' });
-        showNotification('📧 در حال نمایش اطلاعات تماس...');
+        showNotification('در حال نمایش اطلاعات تماس...');
     },
     'about': () => {
         document.querySelector('.profile').scrollIntoView({ behavior: 'smooth' });
-        showNotification('👤 در حال نمایش پروفایل...');
+        showNotification('در حال نمایش پروفایل...');
     },
     'clear': () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        showNotification('🔄 صفحه پاک شد!');
+        showNotification('صفحه پاک شد!');
     },
     'top': () => {
-        showNotification('CPU: 2% | MEM: 512MB | UPTIME: 15 years');
+        showNotification('CPU: 2% | MEM: 512MB | UPTIME: 15 years experience');
     },
     'whoami': () => {
         showNotification('نادر نادری - کارشناس ارشد شبکه و امنیت');
@@ -119,6 +259,12 @@ const commands = {
     },
     'date': () => {
         showNotification(new Date().toLocaleString('fa-IR'));
+    },
+    'neofetch': () => {
+        showNotification('OS: Linux Resume | Host: Nader Naderi | Kernel: Skills v15.0');
+    },
+    'sudo': () => {
+        showNotification('با عرض پوزش، دسترسی root نداری!');
     }
 };
 
@@ -128,7 +274,7 @@ cmdInput.addEventListener('keypress', (e) => {
         if (commands[cmd]) {
             commands[cmd]();
         } else if (cmd) {
-            showNotification(`❌ دستور '${cmd}' یافت نشد. help را امتحان کنید.`);
+            showNotification(`دستور '${cmd}' یافت نشد. help را امتحان کنید.`);
         }
         cmdInput.value = '';
     }
@@ -141,7 +287,7 @@ function showNotification(message) {
     
     const notification = document.createElement('div');
     notification.className = 'terminal-notification';
-    notification.innerHTML = `<span style="color: #58a6ff;">→</span> ${message}`;
+    notification.innerHTML = `<span class="notif-prompt">root@system:~#</span> ${message}`;
     notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -157,13 +303,37 @@ function showNotification(message) {
         box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
         z-index: 10001;
         animation: slideDown 0.3s ease;
+        max-width: 90%;
     `;
     document.body.appendChild(notification);
+    
+    // Type the notification message
+    const textNode = notification.childNodes[1];
+    if (textNode) {
+        const fullMessage = message;
+        notification.innerHTML = '<span class="notif-prompt" style="color: #58a6ff;">root@system:~#</span> ';
+        const cursor = document.createElement('span');
+        cursor.className = 'typing-cursor';
+        cursor.textContent = '█';
+        notification.appendChild(cursor);
+        
+        let i = 0;
+        function typeNotif() {
+            if (i < fullMessage.length) {
+                cursor.before(fullMessage.charAt(i));
+                i++;
+                setTimeout(typeNotif, 30);
+            } else {
+                cursor.remove();
+            }
+        }
+        typeNotif();
+    }
     
     setTimeout(() => {
         notification.style.animation = 'slideUp 0.3s ease forwards';
         setTimeout(() => notification.remove(), 300);
-    }, 3000);
+    }, 3500);
 }
 
 // Add animation keyframes
@@ -177,20 +347,22 @@ style.textContent = `
         from { transform: translateX(-50%) translateY(0); opacity: 1; }
         to { transform: translateX(-50%) translateY(-20px); opacity: 0; }
     }
+    .typing-cursor {
+        color: #00ff41;
+        animation: cursorBlink 0.7s infinite;
+    }
+    .typing-cursor.blink {
+        animation: cursorBlink 0.7s infinite;
+    }
+    @keyframes cursorBlink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+    }
+    .hero h1, section h2 {
+        visibility: hidden;
+    }
 `;
 document.head.appendChild(style);
-
-// ===== Typing Effect for Hero =====
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        const heroTitle = document.querySelector('.hero h1');
-        if (heroTitle) {
-            const cursor = document.createElement('span');
-            cursor.className = 'cursor';
-            heroTitle.appendChild(cursor);
-        }
-    }, 2500);
-});
 
 // ===== Glitch Effect on Hover =====
 document.querySelectorAll('h2').forEach(h2 => {
@@ -203,12 +375,12 @@ document.querySelectorAll('h2').forEach(h2 => {
 const glitchStyle = document.createElement('style');
 glitchStyle.textContent = `
     @keyframes glitch {
-        0% { transform: translate(0); }
-        20% { transform: translate(-2px, 2px); }
-        40% { transform: translate(-2px, -2px); }
-        60% { transform: translate(2px, 2px); }
-        80% { transform: translate(2px, -2px); }
-        100% { transform: translate(0); }
+        0% { transform: translate(0); text-shadow: 2px 0 #ff0000, -2px 0 #00ff00; }
+        20% { transform: translate(-2px, 2px); text-shadow: -2px 0 #ff0000, 2px 0 #00ff00; }
+        40% { transform: translate(-2px, -2px); text-shadow: 2px 0 #0000ff, -2px 0 #ff00ff; }
+        60% { transform: translate(2px, 2px); text-shadow: -2px 0 #00ffff, 2px 0 #ffff00; }
+        80% { transform: translate(2px, -2px); text-shadow: 2px 0 #ff0000, -2px 0 #00ff00; }
+        100% { transform: translate(0); text-shadow: none; }
     }
 `;
 document.head.appendChild(glitchStyle);
@@ -245,7 +417,7 @@ document.addEventListener('keydown', (e) => {
     
     if (konamiCode.join(',') === konamiSequence.join(',')) {
         document.body.style.animation = 'hueRotate 2s linear';
-        showNotification('🎮 کد مخفی فعال شد! sudo rm -rf /boring');
+        showNotification('کد مخفی فعال شد! sudo rm -rf /boring');
         setTimeout(() => document.body.style.animation = '', 2000);
     }
 });
@@ -259,11 +431,13 @@ hueStyle.textContent = `
 `;
 document.head.appendChild(hueStyle);
 
-// ===== Skills Hover Sound Effect (Visual) =====
+// ===== Skills Click Effect =====
 document.querySelectorAll('.skill').forEach(skill => {
     skill.addEventListener('click', () => {
         const skillName = skill.querySelector('p').textContent;
-        showNotification(`💡 مهارت: ${skillName}`);
+        skill.style.transform = 'scale(0.95)';
+        setTimeout(() => skill.style.transform = '', 150);
+        showNotification(`Loading skill: ${skillName}...`);
     });
 });
 
@@ -271,9 +445,88 @@ document.querySelectorAll('.skill').forEach(skill => {
 document.querySelectorAll('.cert-item').forEach(cert => {
     cert.addEventListener('click', () => {
         const certName = cert.querySelector('span').textContent;
-        showNotification(`🏆 مدرک: ${certName}`);
+        cert.style.transform = 'scale(0.95)';
+        setTimeout(() => cert.style.transform = '', 150);
+        showNotification(`Certificate verified: ${certName}`);
     });
 });
+
+// ===== Timeline Items Typing Effect =====
+function initTimelineTyping() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
+                const title = entry.target.querySelector('h3');
+                const desc = entry.target.querySelector('p');
+                
+                if (title) {
+                    const titleText = title.textContent;
+                    title.textContent = '';
+                    
+                    let i = 0;
+                    function typeTitle() {
+                        if (i < titleText.length) {
+                            title.textContent += titleText.charAt(i);
+                            i++;
+                            setTimeout(typeTitle, 40);
+                        } else if (desc) {
+                            // After title, fade in description
+                            desc.style.opacity = '0';
+                            setTimeout(() => {
+                                desc.style.transition = 'opacity 0.5s ease';
+                                desc.style.opacity = '1';
+                            }, 100);
+                        }
+                    }
+                    typeTitle();
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+
+    timelineItems.forEach(item => timelineObserver.observe(item));
+}
+
+// Initialize timeline typing after DOM is ready
+document.addEventListener('DOMContentLoaded', initTimelineTyping);
+
+// ===== Profile List Typing =====
+function initProfileTyping() {
+    const profileItems = document.querySelectorAll('.profile-details li');
+    
+    const profileObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.typed) {
+                entry.target.dataset.typed = 'true';
+                const text = entry.target.textContent;
+                entry.target.textContent = '';
+                entry.target.style.borderColor = '#00ff41';
+                
+                let i = 0;
+                function typeProfile() {
+                    if (i < text.length) {
+                        entry.target.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeProfile, 25);
+                    } else {
+                        entry.target.style.borderColor = '';
+                    }
+                }
+                typeProfile();
+            }
+        });
+    }, { threshold: 0.3, rootMargin: '0px 0px -20px 0px' });
+
+    profileItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+        profileObserver.observe(item);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initProfileTyping);
 
 // ===== Random Terminal Messages =====
 const terminalMessages = [
