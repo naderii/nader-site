@@ -384,3 +384,14 @@ footer a:hover {
     font-size: 2rem;
   }
 }
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--accent-primary); /* همان رنگ سایبری/نئونی */
+  box-shadow: 0 0 10px var(--accent-primary);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
