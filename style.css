@@ -340,3 +340,47 @@ footer a:hover {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
+/* =========================================
+   Responsive Design (تنظیمات موبایل و تبلت)
+   ========================================= */
+@media (max-width: 960px) {
+  /* تنظیم مجدد عکس پروفایل */
+  .profile-image img {
+    position: relative; /* خروج از حالت ثابت */
+    left: auto;
+    top: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto; /* وسط‌چین کردن عکس */
+    width: 120px;
+    height: 120px;
+  }
+
+  /* مرتب‌سازی بخش پروفایل */
+  .profile-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profile-details ul li {
+    text-align: right; /* حفظ راست‌چین بودن لیست مشخصات */
+  }
+
+  /* پنهان کردن یا تغییر موقعیت سیاره‌ها در موبایل برای جلوگیری از شلوغی */
+  .skill-planet, .orbit {
+    display: none; 
+  }
+
+  /* تنظیم فاصله‌ها در موبایل */
+  .container {
+    padding: 1rem;
+  }
+
+  header.hero {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
