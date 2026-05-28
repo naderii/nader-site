@@ -395,3 +395,25 @@ footer a:hover {
   z-index: 9999;
   transition: width 0.1s ease-out;
 }
+/* تنظیمات هدر برای نگه داشتن ذرات */
+header.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* استایل کانتینر ذرات */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1; /* قرارگیری در پس‌زمینه */
+}
+
+/* بالا آوردن متن‌های هدر */
+header.hero > *:not(#particles-js) {
+  position: relative;
+  z-index: 2; /* قرارگیری روی ذرات */
+}
+
