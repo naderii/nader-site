@@ -1,321 +1,319 @@
-/* متغیرهای رنگی (تم تاریک مدرن) */
-:root {
-    --bg-main: #0a0e17;
-    --bg-card: #111827;
-    --bg-hover: #1f2937;
-    --text-main: #e5e7eb;
-    --text-muted: #9ca3af;
-    --accent-primary: #00f0ff;
-    --accent-secondary: #10b981;
-    --border-color: #374151;
-    --glow-primary: 0 0 15px rgba(0, 240, 255, 0.4);
-    --glow-secondary: 0 0 15px rgba(16, 185, 129, 0.4);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', sans-serif;
 }
 
-/* تنظیمات پایه */
 body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    font-family: 'Vazirmatn', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-h1, h2, h3 {
-    color: var(--text-main);
-}
-
-a {
-    color: var(--accent-primary);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-a:hover {
-    color: var(--accent-secondary);
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.8;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem;
 }
 
-/* نوار پیشرفت اسکرول */
-#scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 4px;
-    background: var(--accent-primary);
-    box-shadow: var(--glow-primary);
-    z-index: 9999;
-}
-
-/* هدر و Particles.js */
 header.hero {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0f172a, #0a0e17);
-    padding: 5rem 2rem;
-    text-align: center;
-    border-bottom: 2px solid var(--accent-primary);
-    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.1);
+  background: linear-gradient(135deg, #0062cc, #a6bed8);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-header.hero > *:not(#particles-js) {
-    position: relative;
-    z-index: 2;
+header .title {
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
-header.hero h1 {
-    font-size: 2.5rem;
-    color: var(--accent-primary);
-    text-shadow: var(--glow-primary);
-}
-
-#typed {
-    font-family: 'Fira Code', 'Vazirmatn', monospace;
-    color: var(--accent-secondary);
-    font-size: 1.2rem;
-    direction: ltr;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-/* بخش‌ها (کارت‌ها) */
 section {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* background: white; */
+  margin-top: 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 1s ease-in-out;
 }
 
-section:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-section h2 {
-    color: var(--accent-primary);
-    border-bottom: 1px dashed var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+h2 {
+  color: #004085;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
-/* پروفایل و عکس */
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+ul {
+  list-style: none;
+  padding-right: 1rem;
 }
 
-.profile-image img {
-    position: fixed; /* در دسکتاپ ثابت می‌ماند */
-    left: 2rem;
-    top: 5rem;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid var(--accent-primary);
-    box-shadow: var(--glow-primary);
-    object-fit: cover;
-    z-index: 10;
-}
-
-.profile-info {
-    flex: 1;
-}
-
-.profile-info p {
-    margin: 0.5rem 0;
-    color: var(--text-muted);
-}
-
-.profile-info i {
-    color: var(--accent-primary);
-    width: 25px;
-}
-
-/* مهارت‌ها */
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-}
-
-.skill-item {
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    padding: 1rem;
-    text-align: center;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.skill-item:hover {
-    background: var(--bg-hover);
-    border-color: var(--accent-primary);
-    box-shadow: var(--glow-primary);
-}
-
-/* مدارک */
-.certification-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.cert-item {
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    transition: 0.3s;
-    color: var(--text-muted);
-}
-
-.cert-item:hover {
-    color: var(--accent-secondary);
-    border-color: var(--accent-secondary);
-    box-shadow: var(--glow-secondary);
-}
-
-/* تایم‌لاین (سوابق کاری و تحصیلی) */
-.timeline {
-    border-right: 2px solid var(--accent-primary);
-    padding-right: 1.5rem;
-    margin-right: 1rem;
-    position: relative;
+ul li {
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
 }
 
 .timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    right: -2rem;
-    top: 0;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent-primary);
-    box-shadow: var(--glow-primary);
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill {
+  background-color: #e9ecef;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+}
+
+.skill i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #0062cc;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #004085;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.certification-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f5f5f5;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.cert-item i {
+  color: #007bff;
+  font-size: 1rem;
+}
+
+.cert-item:hover {
+  background-color: #e0f7fa;
+  transform: translateY(-2px);
+}
+
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding: 0;
+  border-right: 2px solid #3498db;
+}
+
+.timeline-item {
+  position: relative;
+  padding-right: 40px;
+  margin-bottom: 2rem;
+}
+
+.timeline-icon {
+  position: absolute;
+  right: -14px;
+  top: 5px;
+  background: #3498db;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.timeline-content {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  direction: rtl;
 }
 
 .timeline-date {
-    color: var(--accent-secondary);
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #888;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.timeline-content h3 {
-    margin: 0 0 0.5rem 0;
+.timeline h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
 }
 
-.timeline-content p {
-    color: var(--text-muted);
-    margin: 0;
+.profile-flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  direction: rtl;
 }
 
-/* سیاره مهارت‌ها (Skill Planet) */
+.profile-image img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3498db;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  left: 10%;
+  top: 30%;
+  position: fixed;
+  
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-details h2 {
+  margin-bottom: 1rem;
+}
+
+.profile-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-details li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.summary {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
 .skill-planet {
-    position: absolute;
-    right: 5%;
-    top: 20%;
-    width: 150px;
-    height: 150px;
-    animation: spin 20s linear infinite;
-    z-index: 2;
+  /* position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto; */
+  position: absolute;
+  z-index: 10;
+  top: 20%;
+  left: 10%;
+}
+
+.planet-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -50%);
+}
+
+.center-icon {
+  width: 100%;
 }
 
 .orbit {
-    position: absolute;
-    border-radius: 50%;
-    border: 1px dashed var(--border-color);
+  position: fixed;
+  top: 40%;
+  left: 14%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  animation: spin 20s linear infinite;
+}
+
+.orbit-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40px;
+  transform: translateX(-50%);
+}
+
+.orbit1 {
+  width: 200px;
+  height: 200px;
+  animation-duration: 10s;
+}
+
+.orbit2 {
+  width: 220px;
+  height: 230px;
+  animation-duration: 14s;
+}
+
+.orbit3 {
+  width: 240px;
+  height: 250px;
+  animation-duration: 18s;
+}
+
+.orbit4 {
+  width: 260px;
+  height: 270px;
+  animation-duration: 22s;
 }
 
 @keyframes spin {
-    100% { transform: rotate(360deg); }
-}
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
 
-/* فوتر */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-card);
-    border-top: 1px solid var(--border-color);
-    margin-top: 2rem;
-}
-
-/* ریسپانسیو (موبایل و تبلت) */
-@media (max-width: 960px) {
-    .container {
-        padding: 1rem;
-    }
-
-    header.hero {
-        padding: 3rem 1rem;
-    }
-
-    header.hero h1 {
-        font-size: 1.8rem;
-    }
-
-    /* غیرفعال کردن حالت fixed برای عکس در موبایل */
-    .profile {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-image img {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 1.5rem auto;
-        display: block;
-    }
-
-    /* مخفی کردن سیاره مهارت‌ها برای جلوگیری از شلوغی در موبایل */
-    .skill-planet, .orbit {
-        display: none;
-    }
-
-    .timeline {
-        border-right: none;
-        padding-right: 0;
-        margin-right: 0;
-    }
-
-    .timeline-item::before {
-        display: none;
-    }
-    
-    .timeline-item {
-        background: var(--bg-main);
-        padding: 1rem;
-        border-radius: 8px;
-        border: 1px solid var(--border-color);
-    }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
