@@ -1,11 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Typed.js برای متن متحرک
-  var typed = new Typed('#typed', {
-    strings: ['نادر نادری', 'برنامه نویس', 'متخصص شبکه'],
-    typeSpeed: 100,
-    backSpeed: 50,
-    loop: true
-  });
+const typed = new Typed('#typed', {
+  // استفاده از دستورات لینوکسی برای جذابیت بیشتر
+  strings: [
+    '> root@nader:~# whoami<br>^500 <span style="color:var(--accent-primary)">کارشناس ارشد شبکه و امنیت</span>',
+    '> root@nader:~# ./start_service.sh<br>^500 <span style="color:var(--accent-primary)">متخصص DevOps و زیرساخت</span>',
+    '> root@nader:~# ping server -c 1<br>^500 <span style="color:var(--accent-primary)">مدیر سیستم‌های مجازی‌سازی</span>'
+  ],
+  typeSpeed: 40,
+  backSpeed: 20,
+  backDelay: 2000,
+  loop: true,
+  cursorChar: '█', // کرسر شبیه به محیط ترمینال
+  contentType: 'html' // اجازه اجرای تگ‌های HTML مثل br و span
+});
+
 
   // AOS.js برای انیمیشن‌ها
   AOS.init({
