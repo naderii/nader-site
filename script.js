@@ -302,7 +302,7 @@ function showNotification(message) {
         font-size: 0.9rem;
         box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
         z-index: 10001;
-        animation: slideDown 0.3s ease;
+        animation: slideDown 0.5s ease;
         max-width: 90%;
     `;
     document.body.appendChild(notification);
