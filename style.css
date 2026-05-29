@@ -163,41 +163,7 @@ section .container, .hero .container {
     font-family: 'Fira Code', monospace;
 }
 
-/* ===== Skill Planet Animation ===== */
-.skill-planet {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 30px auto;
-}
-
-.orbit {
-    position: absolute;
-    border: 1px dashed var(--terminal-green);
-    border-radius: 50%;
-    animation: orbit-rotate 10s linear infinite;
-}
-
-.orbit1 { width: 100px; height: 100px; top: 50px; left: 50px; animation-duration: 8s; }
-.orbit2 { width: 140px; height: 140px; top: 30px; left: 30px; animation-duration: 12s; }
-.orbit3 { width: 180px; height: 180px; top: 10px; left: 10px; animation-duration: 16s; }
-.orbit4 { width: 200px; height: 200px; top: 0; left: 0; animation-duration: 20s; }
-
-.orbit-icon {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    filter: drop-shadow(var(--glow-green));
-    animation: counter-rotate 10s linear infinite;
-}
-
-.orbit1 .orbit-icon { animation-duration: 8s; }
-.orbit2 .orbit-icon { animation-duration: 12s; }
-.orbit3 .orbit-icon { animation-duration: 16s; }
-.orbit4 .orbit-icon { animation-duration: 20s; }
+/* ===== Orbit Animation Keyframes ===== */
 
 @keyframes orbit-rotate {
     from { transform: rotate(0deg); }
@@ -242,18 +208,90 @@ h2::after {
     flex-wrap: wrap;
 }
 
-.profile-image {
+/* ===== Profile Image with Orbiting Icons ===== */
+.profile-image-wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image {
+    position: relative;
+    z-index: 10;
 }
 
 .profile-image img {
-    width: 180px;
-    height: 180px;
-    border-radius: 8px;
-    border: 2px solid var(--terminal-green);
-    box-shadow: var(--glow-green);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--terminal-green);
+    box-shadow: var(--glow-green), 0 0 30px rgba(0, 255, 65, 0.3);
     object-fit: cover;
 }
+
+/* ===== Orbits around Profile Image ===== */
+.profile-image-wrapper .orbit {
+    position: absolute;
+    border: 1px dashed rgba(0, 255, 65, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbit-rotate 10s linear infinite;
+}
+
+.profile-image-wrapper .orbit1 { 
+    width: 180px; 
+    height: 180px; 
+    animation-duration: 8s; 
+    border-color: rgba(0, 255, 65, 0.5);
+}
+
+.profile-image-wrapper .orbit2 { 
+    width: 220px; 
+    height: 220px; 
+    animation-duration: 12s; 
+    animation-direction: reverse;
+    border-color: rgba(88, 166, 255, 0.5);
+}
+
+.profile-image-wrapper .orbit3 { 
+    width: 260px; 
+    height: 260px; 
+    animation-duration: 16s; 
+    border-color: rgba(189, 147, 249, 0.5);
+}
+
+.profile-image-wrapper .orbit4 { 
+    width: 280px; 
+    height: 280px; 
+    animation-duration: 20s; 
+    animation-direction: reverse;
+    border-color: rgba(139, 233, 253, 0.5);
+}
+
+.profile-image-wrapper .orbit-icon {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.6));
+    animation: counter-rotate 10s linear infinite;
+    background: var(--terminal-dark);
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.profile-image-wrapper .orbit1 .orbit-icon { animation-duration: 8s; }
+.profile-image-wrapper .orbit2 .orbit-icon { animation-duration: 12s; animation-direction: reverse; }
+.profile-image-wrapper .orbit3 .orbit-icon { animation-duration: 16s; }
+.profile-image-wrapper .orbit4 .orbit-icon { animation-duration: 20s; animation-direction: reverse; }
 
 .profile-details {
     flex: 1;
@@ -649,6 +687,27 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    
+    .profile-image-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profile-image-wrapper .orbit1 { width: 140px; height: 140px; }
+    .profile-image-wrapper .orbit2 { width: 170px; height: 170px; }
+    .profile-image-wrapper .orbit3 { width: 200px; height: 200px; }
+    .profile-image-wrapper .orbit4 { width: 220px; height: 220px; }
+    
+    .profile-image-wrapper .orbit-icon {
+        width: 24px;
+        height: 24px;
+        top: -12px;
     }
     
     .profile-details {
