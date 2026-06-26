@@ -33,6 +33,8 @@ body {
     line-height: 1.8;
     overflow-x: hidden;
     position: relative;
+    padding-bottom: 110px;
+
 }
 
 /* Scanline Effect */
@@ -651,18 +653,21 @@ footer a:hover {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--terminal-dark);
+    background: rgba(22, 27, 34, 0.95);
+    backdrop-filter: blur(8px);
     border: 1px solid var(--terminal-green);
-    border-radius: 25px;
-    padding: 10px 20px;
+    border-radius: 18px;
+    padding: 12px 18px;
     display: flex;
     align-items: center;
     gap: 10px;
     box-shadow: var(--glow-green);
     z-index: 1000;
-    max-width: 90%;
-    width: 500px;
+    max-width: min(90%, 560px);
+    width: 100%;
 }
+
+
 
 #terminal-input span {
     color: var(--terminal-blue);
@@ -745,9 +750,12 @@ footer a:hover {
     }
     
     #terminal-input {
-        width: 95%;
+        width: calc(100% - 20px);
         bottom: 10px;
+        padding: 10px 14px;
+        border-radius: 14px;
     }
+
 }
 
 /* ===== Selection Style ===== */
