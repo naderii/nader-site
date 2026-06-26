@@ -52,11 +52,13 @@ const loadingMessages = [
     '[ OK ] Starting system...',
     '[ OK ] Loading kernel modules...',
     '[ OK ] Mounting /dev/skills...',
+    '[ OK ] Initializing infrastructure services...',
+    '[ OK ] Loading featured-projects.service...',
     '[ OK ] Starting network-manager...',
     '[ OK ] Loading nader-resume.service...',
-    '[ OK ] Initializing user interface...',
     '[ OK ] System ready!'
 ];
+
 
 const loadingText = document.getElementById('loading-text');
 let messageIndex = 0;
@@ -231,7 +233,7 @@ document.body.appendChild(terminalInput);
 const cmdInput = document.getElementById('cmd-input');
 
 const commands = {
-    'help': () => showNotification('دستورات: skills, contact, about, clear, top, whoami, date'),
+    'help': () => showNotification('دستورات: skills, projects, contact, about, clear, top, whoami, uname, neofetch, date'),
     'skills': () => {
         document.querySelector('.skills').scrollIntoView({ behavior: 'smooth' });
         showNotification('در حال نمایش مهارت‌ها...');
@@ -249,23 +251,29 @@ const commands = {
         showNotification('صفحه پاک شد!');
     },
     'top': () => {
-        showNotification('CPU: 2% | MEM: 512MB | UPTIME: 15 years experience');
+        showNotification('CPU: 2% | MEM: 512MB | UPTIME: 15+ years | SERVICES: VMware, GitLab, Zabbix, VoIP');
     },
     'whoami': () => {
-        showNotification('نادر نادری - کارشناس ارشد شبکه و امنیت');
+        showNotification('نادر نادری - کارشناس ارشد زیرساخت، شبکه و امنیت اطلاعات');
     },
     'uname': () => {
-        showNotification('Linux nader-pc 6.1.0-resume #1 SMP');
+        showNotification('Linux nader-resume 6.1.0-infra #1 SMP');
     },
+    'neofetch': () => {
+        showNotification('OS: Linux Resume | Role: Senior Infrastructure Engineer | Kernel: Skills v15.0');
+    },
+
     'date': () => {
         showNotification(new Date().toLocaleString('fa-IR'));
     },
-    'neofetch': () => {
-        showNotification('OS: Linux Resume | Host: Nader Naderi | Kernel: Skills v15.0');
-    },
     'sudo': () => {
         showNotification('با عرض پوزش، دسترسی root نداری!');
-    }
+    },
+    'projects': () => {
+    document.querySelector('.projects').scrollIntoView({ behavior: 'smooth' });
+    showNotification('در حال نمایش پروژه‌های شاخص...');
+},
+
 };
 
 cmdInput.addEventListener('keypress', (e) => {
@@ -530,10 +538,11 @@ document.addEventListener('DOMContentLoaded', initProfileTyping);
 
 // ===== Random Terminal Messages =====
 const terminalMessages = [
-    'همه سیستم‌ها آنلاین هستند...',
-    'بارگذاری مهارت‌های جدید...',
-    'اتصال به سرورها برقرار است...',
-    'امنیت شبکه: فعال',
+    'همه سرویس‌های زیرساختی آنلاین هستند...',
+    'بارگذاری پروژه‌های شاخص...',
+    'اتصال به سرورهای مجازی برقرار است...',
+    'مانیتورینگ و امنیت شبکه فعال است...',
+    'پایداری سرویس‌ها در وضعیت مطلوب قرار دارد...'
     'پینگ به موفقیت‌ها: 1ms'
 ];
 
