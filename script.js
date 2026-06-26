@@ -235,7 +235,7 @@ document.body.appendChild(terminalInput);
 const cmdInput = document.getElementById('cmd-input');
 
 const commands = {
-    'help': () => showNotification('دستورات: skills, projects, contact, about, clear, top, whoami, uname, neofetch, date'),
+    'help': () => showNotification('دستورات: skills, projects, contact, about, clear, top, whoami, uname, neofetch, date', 12000),
     'skills': () => {
         document.querySelector('.skills').scrollIntoView({ behavior: 'smooth' });
         showNotification('در حال نمایش مهارت‌ها...');
@@ -290,7 +290,7 @@ cmdInput.addEventListener('keypress', (e) => {
 });
 
 // ===== Notification System =====
-function showNotification(message) {
+function showNotification(message, duration = 5000) {
     const existing = document.querySelector('.terminal-notification');
     if (existing) existing.remove();
     
@@ -316,33 +316,28 @@ function showNotification(message) {
     `;
     document.body.appendChild(notification);
     
-    // Type the notification message
-    const textNode = notification.childNodes[1];
-    if (textNode) {
-        const fullMessage = message;
-        notification.innerHTML = '<span class="notif-prompt" style="color: #58a6ff;">root@system:~#</span> ';
-        const cursor = document.createElement('span');
-        cursor.className = 'typing-cursor';
-        cursor.textContent = '█';
-        notification.appendChild(cursor);
-        
-        let i = 0;
-        function typeNotif() {
-            if (i < fullMessage.length) {
-                cursor.before(fullMessage.charAt(i));
-                i++;
-                setTimeout(typeNotif, 30);
-            } else {
-                cursor.remove();
-            }
+    notification.innerHTML = '<span class="notif-prompt" style="color: #58a6ff;">root@system:~#</span> ';
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    cursor.textContent = '█';
+    notification.appendChild(cursor);
+    
+    let i = 0;
+    function typeNotif() {
+        if (i < message.length) {
+            cursor.before(message.charAt(i));
+            i++;
+            setTimeout(typeNotif, 30);
+        } else {
+            cursor.remove();
         }
-        typeNotif();
     }
+    typeNotif();
     
     setTimeout(() => {
         notification.style.animation = 'slideUp 0.3s ease forwards';
         setTimeout(() => notification.remove(), 300);
-    }, 3500);
+    }, duration);
 }
 
 // Add animation keyframes
