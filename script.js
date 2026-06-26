@@ -8,19 +8,21 @@ const ctx = canvas.getContext('2d');
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+
+    columns = Math.floor(canvas.width / fontSize);
+    drops.length = 0;
+
+    for (let i = 0; i < columns; i++) {
+        drops[i] = Math.random() * -100;
+    }
 }
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+
 
 const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const charArray = chars.split('');
 const fontSize = 14;
-let columns = canvas.width / fontSize;
+let columns = 0;
 const drops = [];
-
-for (let i = 0; i < columns; i++) {
-    drops[i] = Math.random() * -100;
-}
 
 function drawMatrix() {
     ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
@@ -238,6 +240,10 @@ const commands = {
         document.querySelector('.skills').scrollIntoView({ behavior: 'smooth' });
         showNotification('در حال نمایش مهارت‌ها...');
     },
+    'projects': () => {
+        document.querySelector('.projects').scrollIntoView({ behavior: 'smooth' });
+        showNotification('در حال نمایش پروژه‌های شاخص...');
+    },
     'contact': () => {
         document.querySelector('footer').scrollIntoView({ behavior: 'smooth' });
         showNotification('در حال نمایش اطلاعات تماس...');
@@ -262,19 +268,14 @@ const commands = {
     'neofetch': () => {
         showNotification('OS: Linux Resume | Role: Senior Infrastructure Engineer | Kernel: Skills v15.0');
     },
-
     'date': () => {
         showNotification(new Date().toLocaleString('fa-IR'));
     },
     'sudo': () => {
         showNotification('با عرض پوزش، دسترسی root نداری!');
-    },
-    'projects': () => {
-    document.querySelector('.projects').scrollIntoView({ behavior: 'smooth' });
-    showNotification('در حال نمایش پروژه‌های شاخص...');
-},
-
+    }
 };
+
 
 cmdInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
@@ -542,7 +543,7 @@ const terminalMessages = [
     'بارگذاری پروژه‌های شاخص...',
     'اتصال به سرورهای مجازی برقرار است...',
     'مانیتورینگ و امنیت شبکه فعال است...',
-    'پایداری سرویس‌ها در وضعیت مطلوب قرار دارد...'
+    'پایداری سرویس‌ها در وضعیت مطلوب قرار دارد...',
     'پینگ به موفقیت‌ها: 1ms'
 ];
 
