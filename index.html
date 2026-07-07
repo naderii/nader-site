@@ -1,175 +1,32 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رزومه نادر نادری | Nader Naderi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v12/font/simple-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <title>Redirecting...</title>
+
+    <script>
+        (function () {
+            // زبان مرورگر
+            const lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+
+            // اگر فارسی بود
+            if (lang.startsWith("fa")) {
+                window.location.replace("/fa/");
+            } else {
+                // همه زبان‌های دیگر
+                window.location.replace("/en/");
+            }
+        })();
+    </script>
+
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/en/">
+    </noscript>
 </head>
 
 <body>
-
-    <header class="hero">
-        <div class="container">
-            <h1>نادر نادری</h1>
-            <p class="title">کارشناس ارشد زیرساخت، شبکه و امنیت اطلاعات</p>
-            <p class="summary">
-                کارشناس ارشد زیرساخت، شبکه و امنیت اطلاعات با بیش از ۱۵ سال تجربه در طراحی، پیاده‌سازی و نگهداری زیرساخت‌های فناوری اطلاعات.
-                متخصص در راهکارهای مجازی‌سازی، سرویس‌های تحت وب، امنیت شبکه و اتوماسیون.
-                توانمند در تحلیل و رفع مشکلات پیچیده زیرساختی و مدیریت سرویس‌های حیاتی سازمانی.
-            </p>
-        </div>
-    </header>
-
-    <section class="profile">
-        <div class="container profile-flex">
-            <div class="profile-image-wrapper">
-                <div class="profile-image">
-                    <img src="./about.jpg" alt="Profile Picture">
-                </div>
-                <div class="orbit orbit1"><i class="fab fa-git-alt orbit-icon"></i></div>
-                <div class="orbit orbit2"><i class="fab fa-linux orbit-icon"></i></div>
-                <div class="orbit orbit3"><i class="fab fa-python orbit-icon"></i></div>
-                <div class="orbit orbit4"><i class="fab fa-docker orbit-icon"></i></div>
-            </div>
-            <div class="profile-details">
-                <h2>مشخصات فردی</h2>
-                <ul>
-                    <li><strong>نام و نام خانوادگی:</strong> نادر نادری</li>
-                    <li><strong>تاریخ تولد:</strong> ۱۳۶۴</li>
-                    <li><strong>وضعیت تاهل:</strong> متاهل</li>
-                    <li><strong>وضعیت نظام وظیفه:</strong> پایان خدمت</li>
-                    <li><strong>محل سکونت:</strong> کاشان، اصفهان</li>
-                    <li><strong>موبایل:</strong> 09133634996</li>
-                    <li><strong>ایمیل:</strong> nadernaderinia@gmail.com</li>
-                    <li><strong>وب سایت:</strong> parsysnet.ir</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="education">
-        <div class="container">
-            <h2>تحصیلات</h2>
-            <ul>
-                <li><strong>کارشناسی مهندسی فناوری اطلاعات (IT)</strong><br>دانشگاه شهید رجایی کاشان<br>سال فارغ‌التحصیلی: ۱۴۰۴<br>معدل: ۱۷٫۹۸</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="work-experience">
-        <div class="container">
-            <h2>سوابق شغلی</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
-                    <div class="timeline-content"><span class="timeline-date">۱۳۸۳ – ۱۳۸۵</span><h3>مدیر شبکه – بندرعباس</h3></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-server"></i></div>
-                    <div class="timeline-content"><span class="timeline-date">۱۳۸۵ – ۱۳۸۹</span><h3>مدیر سرور و شبکه – شرکت ربیع کاشان</h3></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-cogs"></i></div>
-                    <div class="timeline-content"><span class="timeline-date">۱۳۸۹ – ۱۳۹۲</span><h3>مدیر فنی – آریا سیستم پارس</h3></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-network-wired"></i></div>
-                    <div class="timeline-content"><span class="timeline-date">۱۳۹۲ – ۱۳۹۴</span><h3>مدیر شبکه – ارتباط برتر کویر</h3></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div class="timeline-content"><span class="timeline-date">۱۳۹۴ – اکنون</span><h3>کارشناس ارشد شبکه – شهرداری کاشان</h3></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="projects">
-        <div class="container">
-            <h2>پروژه‌های شاخص</h2>
-            <ul>
-                <li>طراحی و پیاده‌سازی زیرساخت مجازی‌سازی (VMware vSphere & vCenter) برای ۵۰+ سرور</li>
-                <li>پیاده‌سازی سرویس‌های سازمانی (Nextcloud, Mattermost) جهت بهبود ارتباطات و مستندات داخلی</li>
-                <li>راه‌اندازی سیستم مانیتورینگ جامع (Zabbix & Grafana) و تحلیل ترافیک (Netflow)</li>
-                <li>استقرار Load Balancerهای پیشرفته (Traefik, HAProxy) جهت توزیع بار و پایداری سرویس‌ها</li>
-                <li>پیاده‌سازی اتوماسیون DevOps (GitLab, Jenkins, Ansible) و Dockerization سرویس‌ها</li>
-                <li>امن‌سازی و مدیریت فایروال‌های لبه (FortiGate, pfSense) و مدیریت استوریج‌های HPE MSA</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="skills">
-        <div class="container">
-            <h2>مهارت‌ها و تخصص‌ها</h2>
-            <div class="skills-list">
-                <div class="skill"><i class="fas fa-cloud"></i><p>VMware vSphere</p></div>
-                <div class="skill"><i class="fas fa-server"></i><p>vCenter</p></div>
-                <div class="skill"><i class="fas fa-server"></i><p>Proxmox VE</p></div>
-                <div class="skill"><i class="fab fa-linux"></i><p>Linux & Bash</p></div>
-                <div class="skill"><i class="fas fa-network-wired"></i><p>MikroTik</p></div>
-                <div class="skill"><i class="si si-cisco"></i><p>Cisco</p></div>
-                <div class="skill"><i class="fas fa-fire"></i><p>FortiGate & pfSense</p></div>
-                <div class="skill"><i class="fas fa-traffic-light"></i><p>HAProxy & Traefik</p></div>
-                <div class="skill"><i class="fas fa-project-diagram"></i><p>Netflow & Openflow</p></div>
-                <div class="skill"><i class="fas fa-database"></i><p>SQL Server Admin</p></div>
-                <div class="skill"><i class="fas fa-th-large"></i><p>cPanel / DirectAdmin / CWP</p></div>
-                <div class="skill"><i class="fas fa-cloud-upload-alt"></i><p>Nextcloud</p></div>
-                <div class="skill"><i class="fas fa-comments"></i><p>Mattermost</p></div>
-                <div class="skill"><i class="fas fa-sync-alt"></i><p>Core Sync</p></div>
-                <div class="skill"><i class="fas fa-envelope-open-text"></i><p>Mail Server</p></div>
-                <div class="skill"><i class="fas fa-phone-alt"></i><p>VoIP (Asterisk/Issabel)</p></div>
-                <div class="skill"><i class="fab fa-docker"></i><p>Docker</p></div>
-                <div class="skill"><i class="fab fa-jenkins"></i><p>Jenkins</p></div>
-                <div class="skill"><i class="fab fa-gitlab"></i><p>GitLab</p></div>
-                <div class="skill"><i class="fas fa-code-branch"></i><p>Ansible</p></div>
-                <div class="skill"><i class="fab fa-python"></i><p>Python Automation</p></div>
-                <div class="skill"><i class="fas fa-chart-line"></i><p>Zabbix & Grafana</p></div>
-                <div class="skill"><i class="fas fa-save"></i><p>Veeam Backup</p></div>
-                <div class="skill"><i class="si si-hp"></i><p>HPE MSA Storage</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="certifications">
-        <div class="container">
-            <h2>مدارک فنی</h2>
-            <div class="certification-list">
-                <div class="cert-item"><i class="fas fa-network-wired"></i><span>CCNA & CCNA Data Center</span></div>
-                <div class="cert-item"><i class="fas fa-windows"></i><span>MCSA & MCSE</span></div>
-                <div class="cert-item"><i class="fas fa-broadcast-tower"></i><span>MTCNA, MTCWE, MTCRE</span></div>
-                <div class="cert-item"><i class="fab fa-linux"></i><span>LPIC-1, 2 & 305</span></div>
-                <div class="cert-item"><i class="fas fa-code-branch"></i><span>Git & Ansible</span></div>
-                <div class="cert-item"><i class="fas fa-chart-line"></i><span>Zabbix</span></div>
-                <div class="cert-item"><i class="fas fa-phone-volume"></i><span>Asterisk & Issabel</span></div>
-                <div class="cert-item"><i class="fas fa-shield-alt"></i><span>FortiGate & pfSense</span></div>
-                <div class="cert-item"><i class="fas fa-server"></i><span>Server+ & Storage+</span></div>
-                <div class="cert-item"><i class="fab fa-docker"></i><span>Docker & Jenkins</span></div>
-                <div class="cert-item"><i class="fas fa-envelope"></i><span>Microsoft Exchange</span></div>
-                
-            </div>
-        </div>
-    </section>
-
-    <section class="languages">
-        <div class="container">
-            <h2>زبان‌ها</h2>
-            <ul>
-                <li><strong>انگلیسی:</strong> خواندن و نوشتن (خوب)، مکالمه (متوسط)</li>
-            </ul>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>تماس با من: <a href="mailto:nadernaderinia@gmail.com">nadernaderinia@gmail.com</a> | وب سایت: <a href="https://parsysnet.ir">Parsysnet.ir</a></p>
-        </div>
-    </footer>
-
-    <script src="./script.js"></script>
+    <p style="font-family:Arial;text-align:center;margin-top:100px;">
+        Redirecting...
+    </p>
 </body>
 </html>
