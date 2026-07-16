@@ -584,12 +584,21 @@ function prepareForPrint() {
         section.style.opacity = '1';
         section.style.transform = 'none';
     });
+
+    // Extra safeguard: hide orbiting icons directly (in addition to the print CSS rule)
+    document.querySelectorAll('.orbit').forEach(el => {
+        el.style.display = 'none';
+    });
 }
 
 function restoreAfterPrint() {
     canvas.style.display = '';
     loadingScreen.style.display = '';
     terminalInput.style.display = '';
+
+    document.querySelectorAll('.orbit').forEach(el => {
+        el.style.display = '';
+    });
 }
 
 window.addEventListener('beforeprint', prepareForPrint);
@@ -599,34 +608,88 @@ window.addEventListener('afterprint', restoreAfterPrint);
 const printStyle = document.createElement('style');
 printStyle.textContent = `
     @media print {
-        body {
+        html, body {
+            height: auto !important;
+            overflow: visible !important;
             background: #ffffff !important;
             color: #000000 !important;
+            padding-bottom: 0 !important;
         }
+
+        /* Kill the fixed full-screen decorative layers */
+        body::before,
+        body::after {
+            display: none !important;
+            content: none !important;
+        }
+
         #matrix-canvas,
         #loading-screen,
         #terminal-input,
-        .terminal-notification {
+        .terminal-notification,
+        .orbit,
+        .orbit-icon {
             display: none !important;
         }
-        section {
-            page-break-inside: avoid;
+
+        * {
+            animation: none !important;
+            transition: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            backdrop-filter: none !important;
+        }
+
+        section, .hero {
+            background: #ffffff !important;
+            border: 1px solid #ccc !important;
+            border-radius: 0 !important;
+            overflow: visible !important;
+            height: auto !important;
+            position: static !important;
             opacity: 1 !important;
             transform: none !important;
+            page-break-inside: avoid;
+            margin: 0 0 16px 0 !important;
         }
-        h1, h2, h3, p, li, span {
+
+        /* Hide the "● ● ●" fake terminal title bar */
+        section::before,
+        .hero::before {
+            display: none !important;
+        }
+
+        h1, h2, h3, p, li, span, strong, a {
             color: #000000 !important;
-            text-shadow: none !important;
-            animation: none !important;
         }
+
+        h2::before, h2::after {
+            display: none !important;
+        }
+
+        .hero h1::before,
+        .hero .title::before,
+        .hero .summary::before {
+            color: #000000 !important;
+        }
+
         a {
-            color: #000000 !important;
             text-decoration: underline;
         }
-        .skill, .cert-item, .timeline-item {
+
+        .skill, .cert-item, .timeline-item, .timeline-content,
+        .education li, .languages li, .profile-details li {
             border-color: #cccccc !important;
-            box-shadow: none !important;
             background: #ffffff !important;
+        }
+
+        .profile-image-wrapper {
+            width: auto !important;
+            height: auto !important;
+        }
+
+        .profile-image img {
+            box-shadow: none !important;
         }
     }
 `;
