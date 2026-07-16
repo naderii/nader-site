@@ -235,7 +235,7 @@ document.body.appendChild(terminalInput);
 const cmdInput = document.getElementById('cmd-input');
 
 const commands = {
-    'help': () => showNotification('دستورات: skills, projects, contact, about, clear, top, whoami, uname, neofetch, date', 12000),
+    'help': () => showNotification('دستورات: skills, projects, contact, about, clear, top, whoami, uname, neofetch, date, print', 12000),
     'skills': () => {
         document.querySelector('.skills').scrollIntoView({ behavior: 'smooth' });
         showNotification('در حال نمایش مهارت‌ها...');
@@ -273,6 +273,12 @@ const commands = {
     },
     'sudo': () => {
         showNotification('با عرض پوزش، دسترسی root نداری!');
+    },
+    'print': () => {
+        showNotification('در حال آماده‌سازی صفحه برای پرینت...');
+        setTimeout(() => {
+            window.print();
+        }, 500);
     }
 };
 
@@ -548,6 +554,74 @@ setInterval(() => {
         console.log(`%c[SYSTEM] ${msg}`, 'color: #00ff41; font-family: monospace;');
     }
 }, 5000);
+
+// ===== Print Handling =====
+function prepareForPrint() {
+    canvas.style.display = 'none';
+    loadingScreen.style.display = 'none';
+    terminalInput.style.display = 'none';
+
+    const existingNotif = document.querySelector('.terminal-notification');
+    if (existingNotif) existingNotif.style.display = 'none';
+
+    document.querySelectorAll('.hero h1, section h2, .timeline-item h3, .profile-details li, .hero .summary').forEach(el => {
+        el.style.visibility = 'visible';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+    });
+
+    document.querySelectorAll('.typing-cursor').forEach(cursor => cursor.remove());
+
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '1';
+        section.style.transform = 'none';
+    });
+}
+
+function restoreAfterPrint() {
+    canvas.style.display = '';
+    loadingScreen.style.display = '';
+    terminalInput.style.display = '';
+}
+
+window.addEventListener('beforeprint', prepareForPrint);
+window.addEventListener('afterprint', restoreAfterPrint);
+
+const printStyle = document.createElement('style');
+printStyle.textContent = `
+    @media print {
+        body {
+            background: #ffffff !important;
+            color: #000000 !important;
+        }
+        #matrix-canvas,
+        #loading-screen,
+        #terminal-input,
+        .terminal-notification {
+            display: none !important;
+        }
+        section {
+            page-break-inside: avoid;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+        h1, h2, h3, p, li, span {
+            color: #000000 !important;
+            text-shadow: none !important;
+            animation: none !important;
+        }
+        a {
+            color: #000000 !important;
+            text-decoration: underline;
+        }
+        .skill, .cert-item, .timeline-item {
+            border-color: #cccccc !important;
+            box-shadow: none !important;
+            background: #ffffff !important;
+        }
+    }
+`;
+document.head.appendChild(printStyle);
 
 console.log('%c═══════════════════════════════════════', 'color: #00ff41');
 console.log('%c  رزومه نادر نادری - Terminal Mode  ', 'color: #00ff41; font-size: 16px; font-weight: bold;');
