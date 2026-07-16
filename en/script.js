@@ -27,14 +27,14 @@ const drops = [];
 function drawMatrix() {
     ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
+
     ctx.fillStyle = '#00ff41';
     ctx.font = fontSize + 'px monospace';
-    
+
     for (let i = 0; i < drops.length; i++) {
         const text = charArray[Math.floor(Math.random() * charArray.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        
+
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
             drops[i] = 0;
         }
@@ -165,14 +165,14 @@ function initTypingEffects() {
 function typeTextInElement(element, text, speed = 30) {
     const originalContent = text;
     element.textContent = '';
-    
+
     const cursor = document.createElement('span');
     cursor.className = 'typing-cursor';
     cursor.textContent = '█';
     element.appendChild(cursor);
-    
+
     let index = 0;
-    
+
     function typeChar() {
         if (index < originalContent.length) {
             cursor.before(originalContent.charAt(index));
@@ -183,14 +183,14 @@ function typeTextInElement(element, text, speed = 30) {
             setTimeout(() => cursor.remove(), 1000);
         }
     }
-    
+
     typeChar();
 }
 
 // ===== Observe Section Headers for Typing Effect =====
 function observeSectionHeaders() {
     const headers = document.querySelectorAll('section h2');
-    
+
     const headerObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.dataset.typed) {
@@ -228,39 +228,39 @@ const terminalInput = document.createElement('div');
 terminalInput.id = 'terminal-input';
 terminalInput.innerHTML = `
     <span>nader@resume:~$</span>
-    <input type="text" placeholder="help را وارد کنید..." id="cmd-input">
+    <input type="text" placeholder="type help..." id="cmd-input">
 `;
 document.body.appendChild(terminalInput);
 
 const cmdInput = document.getElementById('cmd-input');
 
 const commands = {
-    'help': () => showNotification('دستورات: skills, projects, contact, about, clear, top, whoami, uname, neofetch, date', 12000),
+    'help': () => showNotification('Commands: skills, projects, contact, about, clear, top, whoami, uname, neofetch, date, print', 12000),
     'skills': () => {
         document.querySelector('.skills').scrollIntoView({ behavior: 'smooth' });
-        showNotification('در حال نمایش مهارت‌ها...');
+        showNotification('Displaying skills...');
     },
     'projects': () => {
         document.querySelector('.projects').scrollIntoView({ behavior: 'smooth' });
-        showNotification('در حال نمایش پروژه‌های شاخص...');
+        showNotification('Displaying featured projects...');
     },
     'contact': () => {
         document.querySelector('footer').scrollIntoView({ behavior: 'smooth' });
-        showNotification('در حال نمایش اطلاعات تماس...');
+        showNotification('Displaying contact info...');
     },
     'about': () => {
         document.querySelector('.profile').scrollIntoView({ behavior: 'smooth' });
-        showNotification('در حال نمایش پروفایل...');
+        showNotification('Displaying profile...');
     },
     'clear': () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        showNotification('صفحه پاک شد!');
+        showNotification('Screen cleared!');
     },
     'top': () => {
         showNotification('CPU: 2% | MEM: 512MB | UPTIME: 15+ years | SERVICES: VMware, GitLab, Zabbix, VoIP');
     },
     'whoami': () => {
-        showNotification('نادر نادری - کارشناس ارشد زیرساخت، شبکه و امنیت اطلاعات');
+        showNotification('Nader Naderi - Senior Infrastructure, Network & Information Security Engineer');
     },
     'uname': () => {
         showNotification('Linux nader-resume 6.1.0-infra #1 SMP');
@@ -269,10 +269,16 @@ const commands = {
         showNotification('OS: Linux Resume | Role: Senior Infrastructure Engineer | Kernel: Skills v15.0');
     },
     'date': () => {
-        showNotification(new Date().toLocaleString('fa-IR'));
+        showNotification(new Date().toLocaleString('en-US'));
     },
     'sudo': () => {
-        showNotification('با عرض پوزش، دسترسی root نداری!');
+        showNotification('Sorry, you do not have root access!');
+    },
+    'print': () => {
+        showNotification('Preparing page for printing...');
+        setTimeout(() => {
+            window.print();
+        }, 500);
     }
 };
 
@@ -283,7 +289,7 @@ cmdInput.addEventListener('keypress', (e) => {
         if (commands[cmd]) {
             commands[cmd]();
         } else if (cmd) {
-            showNotification(`دستور '${cmd}' یافت نشد. help را امتحان کنید.`);
+            showNotification(`Command '${cmd}' not found. Try 'help'.`);
         }
         cmdInput.value = '';
     }
@@ -293,7 +299,7 @@ cmdInput.addEventListener('keypress', (e) => {
 function showNotification(message, duration = 5000) {
     const existing = document.querySelector('.terminal-notification');
     if (existing) existing.remove();
-    
+
     const notification = document.createElement('div');
     notification.className = 'terminal-notification';
     notification.innerHTML = `<span class="notif-prompt">root@system:~#</span> ${message}`;
@@ -315,13 +321,13 @@ function showNotification(message, duration = 5000) {
         max-width: 90%;
     `;
     document.body.appendChild(notification);
-    
+
     notification.innerHTML = '<span class="notif-prompt" style="color: #58a6ff;">root@system:~#</span> ';
     const cursor = document.createElement('span');
     cursor.className = 'typing-cursor';
     cursor.textContent = '█';
     notification.appendChild(cursor);
-    
+
     let i = 0;
     function typeNotif() {
         if (i < message.length) {
@@ -333,7 +339,7 @@ function showNotification(message, duration = 5000) {
         }
     }
     typeNotif();
-    
+
     setTimeout(() => {
         notification.style.animation = 'slideUp 0.3s ease forwards';
         setTimeout(() => notification.remove(), 300);
@@ -418,10 +424,10 @@ const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLe
 document.addEventListener('keydown', (e) => {
     konamiCode.push(e.key);
     konamiCode = konamiCode.slice(-10);
-    
+
     if (konamiCode.join(',') === konamiSequence.join(',')) {
         document.body.style.animation = 'hueRotate 2s linear';
-        showNotification('کد مخفی فعال شد! sudo rm -rf /boring');
+        showNotification('Secret code activated! sudo rm -rf /boring');
         setTimeout(() => document.body.style.animation = '', 2000);
     }
 });
@@ -458,18 +464,18 @@ document.querySelectorAll('.cert-item').forEach(cert => {
 // ===== Timeline Items Typing Effect =====
 function initTimelineTyping() {
     const timelineItems = document.querySelectorAll('.timeline-item');
-    
+
     const timelineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.dataset.animated) {
                 entry.target.dataset.animated = 'true';
                 const title = entry.target.querySelector('h3');
                 const desc = entry.target.querySelector('p');
-                
+
                 if (title) {
                     const titleText = title.textContent;
                     title.textContent = '';
-                    
+
                     let i = 0;
                     function typeTitle() {
                         if (i < titleText.length) {
@@ -500,7 +506,7 @@ document.addEventListener('DOMContentLoaded', initTimelineTyping);
 // ===== Profile List Typing =====
 function initProfileTyping() {
     const profileItems = document.querySelectorAll('.profile-details li');
-    
+
     const profileObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.dataset.typed) {
@@ -508,7 +514,7 @@ function initProfileTyping() {
                 const text = entry.target.textContent;
                 entry.target.textContent = '';
                 entry.target.style.borderColor = '#00ff41';
-                
+
                 let i = 0;
                 function typeProfile() {
                     if (i < text.length) {
@@ -534,12 +540,12 @@ document.addEventListener('DOMContentLoaded', initProfileTyping);
 
 // ===== Random Terminal Messages =====
 const terminalMessages = [
-    'همه سرویس‌های زیرساختی آنلاین هستند...',
-    'بارگذاری پروژه‌های شاخص...',
-    'اتصال به سرورهای مجازی برقرار است...',
-    'مانیتورینگ و امنیت شبکه فعال است...',
-    'پایداری سرویس‌ها در وضعیت مطلوب قرار دارد...',
-    'پینگ به موفقیت‌ها: 1ms'
+    'All infrastructure services are online...',
+    'Loading featured projects...',
+    'Connected to virtual servers...',
+    'Network monitoring and security active...',
+    'Service uptime within optimal range...',
+    'Ping to success: 1ms'
 ];
 
 setInterval(() => {
@@ -550,6 +556,78 @@ setInterval(() => {
 }, 5000);
 
 console.log('%c═══════════════════════════════════════', 'color: #00ff41');
-console.log('%c  رزومه نادر نادری - Terminal Mode  ', 'color: #00ff41; font-size: 16px; font-weight: bold;');
-console.log('%c  برای کمک "help" را در ترمینال وارد کنید  ', 'color: #58a6ff');
+console.log('%c  Nader Naderi Resume - Terminal Mode  ', 'color: #00ff41; font-size: 16px; font-weight: bold;');
+console.log('%c  Type "help" in the terminal for assistance  ', 'color: #58a6ff');
 console.log('%c═══════════════════════════════════════', 'color: #00ff41');
+
+// ===== Print Handling =====
+function prepareForPrint() {
+    canvas.style.display = 'none';
+    loadingScreen.style.display = 'none';
+    terminalInput.style.display = 'none';
+
+    const existingNotif = document.querySelector('.terminal-notification');
+    if (existingNotif) existingNotif.style.display = 'none';
+
+    // Make sure any text still mid-typing is fully shown
+    document.querySelectorAll('.hero h1, section h2, .timeline-item h3, .profile-details li, .hero .summary').forEach(el => {
+        el.style.visibility = 'visible';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+    });
+
+    // Remove any leftover blinking cursors
+    document.querySelectorAll('.typing-cursor').forEach(cursor => cursor.remove());
+
+    // Reveal all sections (in case some haven't scrolled into view yet)
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '1';
+        section.style.transform = 'none';
+    });
+}
+
+function restoreAfterPrint() {
+    canvas.style.display = '';
+    loadingScreen.style.display = '';
+    terminalInput.style.display = '';
+}
+
+window.addEventListener('beforeprint', prepareForPrint);
+window.addEventListener('afterprint', restoreAfterPrint);
+
+// ===== Print Stylesheet =====
+const printStyle = document.createElement('style');
+printStyle.textContent = `
+    @media print {
+        body {
+            background: #ffffff !important;
+            color: #000000 !important;
+        }
+        #matrix-canvas,
+        #loading-screen,
+        #terminal-input,
+        .terminal-notification {
+            display: none !important;
+        }
+        section {
+            page-break-inside: avoid;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+        h1, h2, h3, p, li, span {
+            color: #000000 !important;
+            text-shadow: none !important;
+            animation: none !important;
+        }
+        a {
+            color: #000000 !important;
+            text-decoration: underline;
+        }
+        .skill, .cert-item, .timeline-item {
+            border-color: #cccccc !important;
+            box-shadow: none !important;
+            background: #ffffff !important;
+        }
+    }
+`;
+document.head.appendChild(printStyle);
