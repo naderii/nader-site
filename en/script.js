@@ -96,6 +96,8 @@ class TypeWriter {
         this.cursor = document.createElement('span');
         this.cursor.className = 'typing-cursor';
         this.cursor.textContent = '█';
+        // Save the full text so it can be restored instantly (e.g. before printing)
+        element.dataset.originalText = text;
     }
 
     start() {
@@ -164,6 +166,7 @@ function initTypingEffects() {
 // ===== Type text character by character =====
 function typeTextInElement(element, text, speed = 30) {
     const originalContent = text;
+    element.dataset.originalText = text;
     element.textContent = '';
 
     const cursor = document.createElement('span');
@@ -276,9 +279,12 @@ const commands = {
     },
     'print': () => {
         showNotification('Preparing page for printing...');
-        setTimeout(() => {
-            window.print();
-        }, 500);
+        const triggerPrint = () => setTimeout(() => window.print(), 300);
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(triggerPrint);
+        } else {
+            setTimeout(triggerPrint, 500);
+        }
     }
 };
 
@@ -474,6 +480,7 @@ function initTimelineTyping() {
 
                 if (title) {
                     const titleText = title.textContent;
+                    title.dataset.originalText = titleText;
                     title.textContent = '';
 
                     let i = 0;
@@ -512,6 +519,7 @@ function initProfileTyping() {
             if (entry.isIntersecting && !entry.target.dataset.typed) {
                 entry.target.dataset.typed = 'true';
                 const text = entry.target.textContent;
+                entry.target.dataset.originalText = text;
                 entry.target.textContent = '';
                 entry.target.style.borderColor = '#00ff41';
 
@@ -569,8 +577,12 @@ function prepareForPrint() {
     const existingNotif = document.querySelector('.terminal-notification');
     if (existingNotif) existingNotif.style.display = 'none';
 
-    // Make sure any text still mid-typing is fully shown
-    document.querySelectorAll('.hero h1, section h2, .timeline-item h3, .profile-details li, .hero .summary').forEach(el => {
+    // Instantly restore full text for anything that was (or still is) mid-typing,
+    // regardless of whether the typing effect ever finished or even started.
+    document.querySelectorAll('.hero h1, .hero .title, .hero .summary, section h2, .timeline-item h3, .profile-details li').forEach(el => {
+        if (el.dataset.originalText) {
+            el.textContent = el.dataset.originalText;
+        }
         el.style.visibility = 'visible';
         el.style.opacity = '1';
         el.style.transform = 'none';
@@ -583,6 +595,17 @@ function prepareForPrint() {
     document.querySelectorAll('section').forEach(section => {
         section.style.opacity = '1';
         section.style.transform = 'none';
+    });
+
+    // Reveal any content that was waiting on a scroll-triggered reveal animation
+    // (e.g. items inside a section whose header hasn't been scrolled to yet)
+    document.querySelectorAll('section *, .hero *').forEach(el => {
+        if (el.style.opacity === '0') {
+            el.style.opacity = '1';
+        }
+        if (el.style.transform && el.style.transform !== 'none') {
+            el.style.transform = 'none';
+        }
     });
 
     // Extra safeguard: hide orbiting icons directly (in addition to the print CSS rule)
