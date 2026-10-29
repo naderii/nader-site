@@ -1,32 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-
-    <script>
-        (function () {
-            // زبان مرورگر
-            const lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-
-            // اگر فارسی بود
-            if (lang.startsWith("fa")) {
-                window.location.replace("/fa/");
-            } else {
-                // همه زبان‌های دیگر
-                window.location.replace("/en/");
-            }
-        })();
-    </script>
-
-    <noscript>
-        <meta http-equiv="refresh" content="0; url=/en/">
-    </noscript>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nader Naderi | نادر نادری</title>
+<link rel="alternate" hreflang="fa" href="/fa/">
+<link rel="alternate" hreflang="en" href="/en/">
+<link rel="alternate" hreflang="x-default" href="/en/">
+<script>
+var l=(navigator.language||"").toLowerCase();
+location.replace(l.indexOf("fa")===0?"/fa/":"/en/");
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=/en/"></noscript>
+<style>body{font-family:system-ui,Tahoma,sans-serif;background:#0d1117;color:#e6edf3;text-align:center;padding-top:20vh}a{color:#79b8ff;margin:0 12px}</style>
 </head>
-
 <body>
-    <p style="font-family:Arial;text-align:center;margin-top:100px;">
-        Redirecting...
-    </p>
+<p><a href="/en/">English</a><a href="/fa/">فارسی</a></p>
 </body>
 </html>
